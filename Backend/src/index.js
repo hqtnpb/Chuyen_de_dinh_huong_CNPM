@@ -1,32 +1,34 @@
-const path = require("path");
 const express = require("express");
-const morgan = require("morgan");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+const authRoute = require("./routes/auth");
+
+dotenv.config();
 const app = express();
-const hbs = require("express-handlebars");
-const port = 3000;
 
-app.use(express.static(path.join(__dirname, "assets")));
+const connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGODB_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+        process.exit(1); // Thoát chương trình nếu không kết nối được
+    }
+};
 
-//Http logger
-app.use(morgan("combined"));
+connectDB();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(cookieParser());
 app.use(express.json());
 
-//Template engine
-app.engine(
-    "hbs",
-    hbs.engine({
-        extname: ".hbs",
-    })
-);
-app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources/views"));
+// Routes
+app.use("/api/auth", authRoute);
 
-app.get("/", (req, res) => {
-    res.render("home");
-});
-
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+app.listen(8000, () => {
+    console.log("Server is running on port 8000");
 });
