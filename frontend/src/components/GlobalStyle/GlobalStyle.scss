@@ -1,0 +1,20 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Syne:wght@400..800&display=swap");
+
+:root {
+    --primary: #ff5b26;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Syne, sans-serif;
+    font-family: Manrope, sans-serif;
+    font-size: 1.6rem;
+}
