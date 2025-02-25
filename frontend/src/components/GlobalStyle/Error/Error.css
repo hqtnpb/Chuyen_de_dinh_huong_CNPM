@@ -40,16 +40,12 @@
 
 }
 
-button {
+.btn {
     display: inline-flex;
     padding: 15px 35px;
     align-items: flex-start;
     gap: 10px;
     border-radius: 60px;
     background: var(--orange-primary, #FF5B26);
-}
-
-button, a {
-    color: white;
-    text-decoration: none;
+    color: #fff;
 }
