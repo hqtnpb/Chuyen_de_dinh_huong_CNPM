@@ -16,7 +16,35 @@ html {
 }
 
 body {
-    font-family: Syne, sans-serif;
     font-family: Manrope, sans-serif;
     font-size: 1.6rem;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+input,
+textarea,
+select,
+button {
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    border: none;
+}
+ol,
+ul {
+    list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Syne, san-serif;
 }
