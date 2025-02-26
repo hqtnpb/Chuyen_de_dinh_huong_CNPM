@@ -21,6 +21,7 @@ function Button({
         onClick,
         ...passProps,
     };
+
     if (disabled) {
         Object.keys(props).forEach((key) => {
             if (key.startsWith("on") && typeof props[key] === "function") {
@@ -28,6 +29,7 @@ function Button({
             }
         });
     }
+    
     if (to) {
         props.to = to;
         Comp = Link;
