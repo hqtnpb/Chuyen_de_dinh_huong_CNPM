@@ -1,5 +1,23 @@
 const image = {
     logo: require("~/assets/image/Logo.svg").default,
-    hero_image: require("~/assets/image/Hero_decor_img.svg").default,
+    hero_decor_image: require("~/assets/image/hero_decor_image.svg").default,
+    hero_image: require("~/assets/image/hero_image.png"),
+    location_icon: require("~/assets/image/location_icon.svg").default,
+    calendar_icon: require("~/assets/image/calendar_icon.svg").default,
+    feature_01: require("~/assets/image/feature_decor_01.svg").default,
+    feature_02: require("~/assets/image/feature_decor_02.svg").default,
+    feature_03: require("~/assets/image/feature_decor_03.svg").default,
+    discover_01: require("~/assets/image/discover_image_01.png"),
+    discover_02: require("~/assets/image/discover_image_02.png"),
+    discover_03: require("~/assets/image/discover_image_03.png"),
+    discover_04: require("~/assets/image/discover_image_04.png"),
+    discover_05: require("~/assets/image/discover_image_05.png"),
+    discover_06: require("~/assets/image/discover_image_06.png"),
+    explore_img_01: require("~/assets/image/sydney_01.png"),
+    explore_img_02: require("~/assets/image/sydney_02.png"),
+    explore_img_03: require("~/assets/image/sydney_03.png"),
+    explore_location_icon: require("~/assets/image/explore_location.svg")
+        .default,
+    star: require("~/assets/image/star.svg").default,
 };
 export default image;
