@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 import Button from "~/components/Button/Button";
 import image from "~/assets/image";
 const cx = classNames.bind(styles);
-console.log(image.logo);
+
 function Header() {
     return (
         <header className={cx("header")}>
