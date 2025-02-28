@@ -1,5 +1,5 @@
 function Footer() {
-    return <h2 style={{height: 1000}}></h2>;
+    return ;
 }
 
 export default Footer;
