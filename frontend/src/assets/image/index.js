@@ -19,5 +19,7 @@ const image = {
     explore_location_icon: require("~/assets/image/explore_location.svg")
         .default,
     star: require("~/assets/image/star.svg").default,
+    share_image_01: require("~/assets/image/share_img.png"),
+    share_image_02: require("~/assets/image/share_avt.jpg"),
 };
 export default image;

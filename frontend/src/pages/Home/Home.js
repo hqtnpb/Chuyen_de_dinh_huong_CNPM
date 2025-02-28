@@ -5,6 +5,7 @@ import styles from "./Home.module.scss";
 import HeroSection from "~/components/HeroSection";
 import FeaturesSection from "~/components/FeaturesSection";
 import DiscoverSection from "~/components/DiscoverSection";
+import ShareSection from "~/components/ShareSection";
 const cx = classNames.bind(styles);
 function Home() {
     return (
@@ -20,6 +21,7 @@ function Home() {
             ></HeroSection>
             <FeaturesSection></FeaturesSection>
             <DiscoverSection></DiscoverSection>
+            <ShareSection></ShareSection>
         </div>
     );
 }
