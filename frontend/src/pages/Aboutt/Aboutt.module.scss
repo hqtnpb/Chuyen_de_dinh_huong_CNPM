@@ -1,0 +1,134 @@
+.app {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+  
+      .nav {
+        display: flex;
+        gap: 1.5rem;
+  
+        a {
+          text-decoration: none;
+          color: #333;
+          font-weight: bold;
+  
+          &:hover {
+            color: #555;
+          }
+        }
+      }
+  
+      .auth-buttons {
+        display: flex;
+        gap: 0.5rem;
+  
+        .login {
+          background: none;
+          border: 1px solid #333;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+  
+          &:hover {
+            background: #333;
+            color: #fff;
+          }
+        }
+  
+        .signup {
+          background: #ff6600;
+          color: #fff;
+          border: none;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+  
+          &:hover {
+            background: #e65500;
+          }
+        }
+      }
+    }
+  
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #f9f9f9;
+  
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+  
+    .journey {
+      background: #fff7d6;
+      padding: 3rem 2rem;
+  
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+  
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 1.5rem;
+        }
+  
+        .story {
+          text-align: left;
+  
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  
+    .team {
+      text-align: center;
+      padding: 3rem 2rem;
+  
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+  
+      .team-members {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+  
+        .member {
+          text-align: center;
+  
+          img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+          }
+  
+          p {
+            margin-top: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  
