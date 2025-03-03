@@ -47,6 +47,7 @@
         background-color: #fff;
         border-radius: 42px;
         box-shadow: 0px 20px 90px 0px rgba(157, 110, 0, 0.1);
+
         .input {
             position: relative;
             width: 40%;
@@ -55,9 +56,9 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.75;
-            .icon {
-                margin-left: 50px;
-            }
+        }
+        .icon {
+            cursor: pointer;
         }
         &::before {
             z-index: 1;
@@ -72,6 +73,12 @@
         .btn {
             width: 131px;
             padding: 20px 0;
+        }
+        .date {
+            position: absolute;
+            top: 84px;
+            left: 300px;
+            border-radius: 12px;
         }
     }
     .image {

@@ -21,5 +21,10 @@ const image = {
     star: require("~/assets/image/star.svg").default,
     share_image_01: require("~/assets/image/share_img.png"),
     share_image_02: require("~/assets/image/share_avt.jpg"),
+    play_icon: require("~/assets/image/play_icon.svg").default,
+    face_book: require("~/assets/image/face_book.svg").default,
+    linked: require("~/assets/image/linked_in.svg").default,
+    twitter: require("~/assets/image/twitter.svg").default,
+    instagram: require("~/assets/image/insta.svg").default,
 };
 export default image;
