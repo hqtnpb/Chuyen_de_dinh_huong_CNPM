@@ -16,6 +16,8 @@ function HeroSection({
     title,
     description,
     showForm = true,
+    destination,
+    className,
     children,
     ...props
 }) {
@@ -45,9 +47,12 @@ function HeroSection({
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
-
+    const classes = cx("hero", {
+        destination,
+        [className]: className,
+    });
     return (
-        <section className={cx("hero")}>
+        <section className={classes} {...props}>
             <div className={cx("container")}>
                 <div className={cx("inner")}>
                     <img
@@ -85,7 +90,9 @@ function HeroSection({
                                                 onChange={(item) =>
                                                     setDate([item.selection])
                                                 }
-                                                moveRangeOnFirstSelection={false}
+                                                moveRangeOnFirstSelection={
+                                                    false
+                                                }
                                                 ranges={date}
                                                 className={cx("date")}
                                             />
@@ -115,11 +122,13 @@ function HeroSection({
                                 </form>
                             )}
                         </div>
-                        <img
-                            src={heroImage}
-                            className={cx("image")}
-                            alt="Path Way"
-                        ></img>
+                        {heroImage && (
+                            <img
+                                src={heroImage}
+                                className={cx("image")}
+                                alt="Path Way"
+                            ></img>
+                        )}
                         {children}
                     </div>
                 </div>

@@ -1,0 +1,29 @@
+.content {
+    margin-top: 70px;
+    .top-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.71;
+        }
+    }
+    .card-list {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    .bottom-btn {
+        display: block;
+        margin: 50px auto 0;
+        padding: 15px 35px;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.66;
+    }
+}
