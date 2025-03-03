@@ -15,9 +15,23 @@ function SignUp() {
             <img className={cx("img")} src={image.background_signup} alt="Background" />
             <div className={cx("signup-box")}>
                 <h2 className={cx("title")}>Sign Up</h2>
-                <Button inactive className={cx("auth-btn")}>Continue with Facebook</Button>
-                <Button inactive className={cx("auth-btn")}>Continue with Google</Button>
-                <Button inactive className={cx("auth-btn")}>Continue with Apple</Button>
+                <div className={cx("btn")}>
+                    <div className={cx("group")}>
+                        <img className={cx("icon")} src={image.iconfacebook} />
+                        <Button inactive className={cx("auth-btn")}>
+                            Continue with Facebook </Button>
+                    </div>
+                    <div className={cx("group")}>
+                        <img className={cx("icon","gg")} src={image.icongoogle} />
+                        <Button inactive className={cx("auth-btn")}>
+                            Continue with Google</Button>
+                    </div>
+                    <div className={cx("group")}>
+                        <img className={cx("icon","ap")} src={image.iconapple} />
+                        <Button inactive className={cx("auth-btn")}>
+                            Continue with Apple</Button>
+                    </div>
+                </div>
                 <div className={cx("separator")}>OR</div>
                 <form className={cx("form")}>
                     <input className={cx("input")} type="text" name="firstName" placeholder="Your first name" />
