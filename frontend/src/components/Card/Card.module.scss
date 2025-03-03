@@ -1,0 +1,142 @@
+//Card item
+.card-item {
+    position: relative;
+    width: 370px;
+}
+
+// Discover Card
+.discover {
+    .image {
+        object-fit: cover;
+        width: 100%;
+        height: 430px;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+    .content {
+        position: absolute;
+        padding: 20px;
+        width: 330px;
+        height: 128px;
+        bottom: 40px;
+        left: 20px;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0px 20px 90px 0px rgba(25, 27, 29, 0.1);
+        transition: transform 0.3s ease;
+    }
+    .category {
+        color: #4e5358;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.75;
+    }
+    .title {
+        margin-top: 4px;
+        color: #191b1d;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.27;
+    }
+    .rate {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        .star {
+            width: 14px;
+            height: 14px;
+        }
+        .rating {
+            margin-left: 4px;
+            color: #191b1d;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.71;
+        }
+    }
+    &:hover .image {
+        transform: scale(1.1);
+    }
+    &:hover .content{
+        transform: scale(1.1);
+
+    }
+
+}
+//Explore Card
+.explore {
+    transition: transform 0.3s ease;
+    .card-img {
+        position: relative;
+        .image {
+            object-fit: cover;
+            width: 100%;
+        }
+        .location {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            padding: 4px 12px;
+            top: 18px;
+            right: 18px;
+            background-color: #fff;
+            border-radius: 6px;
+            .icon {
+                width: 12px;
+                height: 14px;
+            }
+            .location-name {
+                margin-left: 4px;
+                color: #191b1d;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.71;
+            }
+        }
+    }
+    .content {
+        padding: 10px;
+        .title {
+            margin-top: 18px;
+            color: #191b1d;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.27;
+        }
+        .desc {
+            margin-top: 10px;
+            color: var(--Grey, #4e5358);
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.75;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Giới hạn số dòng hiển thị */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal; /* Cho phép dòng mới nếu cần */
+        }
+        .rate {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            .star {
+                width: 14px;
+                height: 14px;
+            }
+            .rating {
+                margin-left: 4px;
+                color: #191b1d;
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 1.71;
+            }
+        }
+    }
+    &:hover {
+        border-radius: 16px;
+        transform: translateY(-20px);
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+    }
+}

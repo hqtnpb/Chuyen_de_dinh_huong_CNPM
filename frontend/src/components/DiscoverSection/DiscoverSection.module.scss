@@ -1,0 +1,29 @@
+.discover {
+    margin-top: 150px;
+}
+.title {
+    width: 670px;
+    margin: 0 auto;
+    color: #191b1d;
+    text-align: center;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.card-list {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    column-gap: 30px;
+}
+.btn {
+    display: block;
+    margin: 70px auto 0;
+    padding: 15px 35px;
+    width: 250px;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.66;
+}
