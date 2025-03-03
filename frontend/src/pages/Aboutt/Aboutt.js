@@ -1,21 +1,10 @@
-import React from "react";
-import "./App.scss";
-
+import classNames from "classnames";
+import Button from "~/components/Button/Button";
+import styles from "./Aboutt.module.scss"
 const App = () => {
   return (
     <div className="app">
-      <header className="header">
-        <div className="logo">Pathway</div>
-        <nav className="nav">
-          <a href="#destinations">Destinations</a>
-          <a href="#about">About</a>
-          <a href="#blog">Blog</a>
-        </nav>
-        <div className="auth-buttons">
-          <button className="login">Log in</button>
-          <button className="signup">Sign up</button>
-        </div>
-      </header>
+      
 
       <main>
         <section className="hero">
