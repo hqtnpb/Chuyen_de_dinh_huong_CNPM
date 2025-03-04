@@ -1,140 +1,141 @@
-.main {
+.login {
     .img {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        height: 916px;
+        height: 100%;
+        z-index: -1;
         object-fit: cover;
+
     }
 
-    .login-container {
-        position: absolute;
-        top: 70px;
-        left: 505px;
-        width: 430px;
-        padding: 30px;
-        background-color: #FFF;
-        border-radius: 12px;
-        background: #FFF;
-        box-shadow: 0px 20px 90px 0px rgba(25, 27, 29, 0.10);
+    .main {
+        .box {
+            position: absolute;
+            width: 430px;
+            left: 550px;
+            top: 220px;
+            padding: 30px;
+            border-radius: 12px;
+            background: #FFF;
 
-        .title {
-            margin-bottom: 30px;
-            color: #191B1D;
-            text-align: center;
-            font-family: Syne;
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.35;
-        }
+            .title {
+                color: #191B1D;
+                text-align: center;
+                font-family: Syne;
+                font-size: 2.8rem;
+                font-weight: 700;
+                line-height: 1.35;
+                margin-bottom: 30px;
+            }
 
-        .btn {
-            .group {
-                display: flex;
-                align-items: center;
-                margin-bottom: 12px;
+            .btn {
+                .gr-btn {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 12px;
 
-                .auth-btn {
+                    .icon {
+                        position: absolute;
+                        margin-left: 65px
+                    }
+                    .gg{
+                        margin-left: 75px;
+                    }
+                    .ap{
+                        margin-left: 80px;
+                    }
+
+                    .auth-btn {
+                        width: 370px;
+                        padding: 11px 80px;
+                        color: #4E5358;
+                        text-align: center;
+                        font-family: Manrope;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        line-height: 1.75;
+                        border-radius: 25px;
+                        border: 1px solid rgba(25, 27, 29, 0.15);
+                        background: #FFF;
+                    }
+                }
+            }
+
+            .separator {
+                color: #4E5358;
+                text-align: center;
+                font-family: Manrope;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 1.75;
+                margin-top: 20px;
+            }
+
+            .form {
+                .input {
                     width: 370px;
-                    padding: 11px 80px;
-                    border-radius: 25px;
+                    border-radius: 30px;
                     border: 1px solid rgba(25, 27, 29, 0.15);
                     background: #FFF;
                     color: #4E5358;
-                    text-align: center;
-                    font-size: 1.6rem;
+                    font-family: Manrope;
+                    font-size: 1.8rem;
                     font-weight: 400;
-                    line-height: 1.75;
-                }
-                
-
-                .icon {
-                    margin-left: 65px;
-                    position: absolute;
-                    width: 24px;
-                    
-                }
-                .gg{
-                    margin-left: 75px;
-                }
-                .ap{
-                    margin-left: 80px;
+                    line-height: 1.66;
+                    padding: 15px;
                 }
 
+                .input:not(:last-child) {
+                    margin-top: 12px;
+                }
 
+                .forgot {
+                    color: #4E5358;
+                    margin-left: 180px;
+                    font-family: Manrope;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    line-height: 1.66;
+                    padding: 20px;
+                }
+
+                .signin {
+                    width: 370px;
+                    padding: 15px 0;
+                    margin-left: 0;
+                    border-radius: 30px;
+                    background: #FF5B26;
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Manrope;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.66;
+                }
             }
 
+            .action {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
 
-        }
+                .creat {
+                    color: #4E5358;
+                    text-align: center;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    line-height: 1.66;
+                }
 
-
-        .text {
-            margin-top: 20px;
-            color: #4E5358;
-            text-align: center;
-            font-size: 1.6rem;
-            font-weight: 400;
-            line-height: 1.75;
-        }
-
-        .form {
-            .input {
-                width: 370px;
-                padding: 15px;
-                border-radius: 30px;
-                border: 1px solid rgba(25, 27, 29, 0.15);
-                background: #FFF;
-                color: #4E5358;
-                font-size: 1.8rem;
-                font-weight: 400;
-                line-height: 1.66;
+                .signup {
+                    color: #191B1D;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.66;
+                }
             }
-
-            .input:not(:last-child) {
-                margin-top: 12px;
-            }
-
-            .fpass {
-                margin-left: 180px;
-                color: #4E5358;
-                font-size: 1.8rem;
-                font-weight: 400;
-                line-height: 1.67;
-                padding: 20px;
-
-            }
-
-            .signin-btn {
-                padding: 15px 0;
-                width: 370px;
-                border-radius: 30px;
-                background: #FF5B26;
-                color: #FFF;
-                font-family: Manrope;
-                font-size: 1.8rem;
-                font-weight: 600;
-                line-height: 1.67;
-                margin-left: 0;
-            }
-        }
-
-        .action {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-
-            .creat-acc {
-                color: #4E5358;
-                font-size: 1.8rem;
-                font-weight: 400;
-                line-height: 1.66;
-            }
-        }
-
-        .signup {
-            color: #191B1D;
-            font-size: 1.8rem;
-            font-weight: 600;
-            line-height: 1.66;
         }
     }
 }
