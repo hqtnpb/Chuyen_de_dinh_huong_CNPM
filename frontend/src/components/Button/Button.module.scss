@@ -2,9 +2,9 @@
     font-weight: 600;
     border-radius: 999px;
     cursor: pointer;
-    background-color: transparent;
+    background-color: transparent; 
     user-select: none;
-
+    
     + .wrapper {
         margin-left: 20px;
     }
@@ -23,6 +23,7 @@
 
     &:hover {
         background: #eb5829;
+        color: #fff;
     }
 }
 //Inactive button
@@ -34,6 +35,7 @@
     &:hover {
         background: #eb5829;
         border: 1px solid #eb5829;
+        color: #fff;
     }
 }
 //Text button
