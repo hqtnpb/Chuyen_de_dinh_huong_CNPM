@@ -1,11 +1,6 @@
 .signup {
     .img {
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
-        z-index: -1;
         object-fit: cover;
     }
 
@@ -50,15 +45,18 @@
                     line-height: 1.75;
 
                 }
-                .icon{
+
+                .icon {
                     position: absolute;
                     margin-left: 65px;
                     width: 24px;
                 }
-                .gg{
+
+                .gg {
                     margin-left: 75px;
                 }
-                .ap{
+
+                .ap {
                     margin-left: 80px;
                 }
             }
