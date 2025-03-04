@@ -39,7 +39,7 @@ function Header() {
                     </nav>
 
                     <div className={cx("action")}>
-                        <Button text>Log In</Button>
+                        <Button>Log In</Button>
                         <Button active className={cx("action__btn")}>
                             Sign Up
                         </Button>
