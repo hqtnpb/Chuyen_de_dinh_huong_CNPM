@@ -1,22 +1,18 @@
 .login {
-    .img {
-        width: 100%;
-        object-fit: cover;
-
-    }
-
     .main {
+        display: flex;
+        position: relative;
+        justify-content: center;
         .box {
+            margin-top: 70px;
             position: absolute;
             width: 430px;
-            left: 550px;
-            top: 200px;
             padding: 30px;
             border-radius: 12px;
-            background: #FFF;
+            background: #fff;
 
             .title {
-                color: #191B1D;
+                color: #191b1d;
                 text-align: center;
                 font-family: Syne;
                 font-size: 2.8rem;
@@ -33,19 +29,19 @@
 
                     .icon {
                         position: absolute;
-                        margin-left: 65px
+                        margin-left: 65px;
                     }
-                    .gg{
+                    .gg {
                         margin-left: 75px;
                     }
-                    .ap{
+                    .ap {
                         margin-left: 80px;
                     }
 
                     .auth-btn {
                         width: 370px;
                         padding: 11px 80px;
-                        color: #4E5358;
+                        color: #4e5358;
                         text-align: center;
                         font-family: Manrope;
                         font-size: 1.6rem;
@@ -53,13 +49,13 @@
                         line-height: 1.75;
                         border-radius: 25px;
                         border: 1px solid rgba(25, 27, 29, 0.15);
-                        background: #FFF;
+                        background: #fff;
                     }
                 }
             }
 
             .separator {
-                color: #4E5358;
+                color: #4e5358;
                 text-align: center;
                 font-family: Manrope;
                 font-size: 1.6rem;
@@ -73,8 +69,8 @@
                     width: 370px;
                     border-radius: 30px;
                     border: 1px solid rgba(25, 27, 29, 0.15);
-                    background: #FFF;
-                    color: #4E5358;
+                    background: #fff;
+                    color: #4e5358;
                     font-family: Manrope;
                     font-size: 1.8rem;
                     font-weight: 400;
@@ -87,7 +83,7 @@
                 }
 
                 .forgot {
-                    color: #4E5358;
+                    color: #4e5358;
                     margin-left: 180px;
                     font-family: Manrope;
                     font-size: 1.8rem;
@@ -101,8 +97,8 @@
                     padding: 15px 0;
                     margin-left: 0;
                     border-radius: 30px;
-                    background: #FF5B26;
-                    color: #FFF;
+                    background: #ff5b26;
+                    color: #fff;
                     text-align: center;
                     font-family: Manrope;
                     font-size: 1.8rem;
@@ -117,7 +113,7 @@
                 margin-top: 20px;
 
                 .creat {
-                    color: #4E5358;
+                    color: #4e5358;
                     text-align: center;
                     font-size: 1.8rem;
                     font-weight: 400;
@@ -125,12 +121,16 @@
                 }
 
                 .signup {
-                    color: #191B1D;
+                    color: #191b1d;
                     font-size: 1.8rem;
                     font-weight: 600;
                     line-height: 1.66;
                 }
             }
+        }
+        .img {
+            width: 100%;
+            object-fit: cover;
         }
     }
 }
