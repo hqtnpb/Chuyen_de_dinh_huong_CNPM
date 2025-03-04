@@ -1,0 +1,125 @@
+.signup {
+    .img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .signup-box {
+        position: absolute;
+        top: 200px;
+        left: 550px;
+        width: 430px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        background: #FFF;
+        box-shadow: 0px 20px 90px 0px rgba(25, 27, 29, 0.10);
+
+        .title {
+            margin-bottom: 30px;
+            color: #191B1D;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.35;
+
+        }
+
+        .btn {
+
+            .group {
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+
+                .auth-btn {
+                    width: 370px;
+                    padding: 11px 80px;
+                    border-radius: 25px;
+                    border: 1px solid rgba(25, 27, 29, 0.15);
+                    background: #FFF;
+                    color: #4E5358;
+                    text-align: center;
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    line-height: 1.75;
+
+                }
+
+                .icon {
+                    position: absolute;
+                    margin-left: 65px;
+                    width: 24px;
+                }
+
+                .gg {
+                    margin-left: 75px;
+                }
+
+                .ap {
+                    margin-left: 80px;
+                }
+            }
+        }
+
+
+        .separator {
+            margin-top: 20px;
+            color: #4E5358;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.75;
+        }
+
+        .form {
+            margin-top: 20px;
+        }
+
+        .input {
+            width: 370px;
+            padding: 15px;
+            border-radius: 30px;
+            border: 1px solid rgba(25, 27, 29, 0.15);
+            background: #FFF;
+            color: #4E5358;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.66;
+
+        }
+
+        .input:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            width: 370px;
+            padding: 15px 0;
+        }
+
+        .action {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+
+            .link {
+                color: #4E5358;
+                font-size: 1.8rem;
+                font-weight: 400;
+                line-height: 1.66;
+            }
+
+            .signin {
+
+                color: #191B1D;
+                font-size: 1.8rem;
+                font-weight: 600;
+                line-height: 1.66;
+            }
+
+        }
+    }
+
+}

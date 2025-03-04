@@ -1,0 +1,136 @@
+.login {
+    .img {
+        width: 100%;
+        object-fit: cover;
+
+    }
+
+    .main {
+        .box {
+            position: absolute;
+            width: 430px;
+            left: 550px;
+            top: 200px;
+            padding: 30px;
+            border-radius: 12px;
+            background: #FFF;
+
+            .title {
+                color: #191B1D;
+                text-align: center;
+                font-family: Syne;
+                font-size: 2.8rem;
+                font-weight: 700;
+                line-height: 1.35;
+                margin-bottom: 30px;
+            }
+
+            .btn {
+                .gr-btn {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 12px;
+
+                    .icon {
+                        position: absolute;
+                        margin-left: 65px
+                    }
+                    .gg{
+                        margin-left: 75px;
+                    }
+                    .ap{
+                        margin-left: 80px;
+                    }
+
+                    .auth-btn {
+                        width: 370px;
+                        padding: 11px 80px;
+                        color: #4E5358;
+                        text-align: center;
+                        font-family: Manrope;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        line-height: 1.75;
+                        border-radius: 25px;
+                        border: 1px solid rgba(25, 27, 29, 0.15);
+                        background: #FFF;
+                    }
+                }
+            }
+
+            .separator {
+                color: #4E5358;
+                text-align: center;
+                font-family: Manrope;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 1.75;
+                margin-top: 20px;
+            }
+
+            .form {
+                .input {
+                    width: 370px;
+                    border-radius: 30px;
+                    border: 1px solid rgba(25, 27, 29, 0.15);
+                    background: #FFF;
+                    color: #4E5358;
+                    font-family: Manrope;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    line-height: 1.66;
+                    padding: 15px;
+                }
+
+                .input:not(:last-child) {
+                    margin-top: 12px;
+                }
+
+                .forgot {
+                    color: #4E5358;
+                    margin-left: 180px;
+                    font-family: Manrope;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    line-height: 1.66;
+                    padding: 20px;
+                }
+
+                .signin {
+                    width: 370px;
+                    padding: 15px 0;
+                    margin-left: 0;
+                    border-radius: 30px;
+                    background: #FF5B26;
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Manrope;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.66;
+                }
+            }
+
+            .action {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+
+                .creat {
+                    color: #4E5358;
+                    text-align: center;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                    line-height: 1.66;
+                }
+
+                .signup {
+                    color: #191B1D;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.66;
+                }
+            }
+        }
+    }
+}

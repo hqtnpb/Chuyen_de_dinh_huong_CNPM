@@ -3,9 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "~/App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "~/components/GlobalStyle";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+
     <React.StrictMode>
         <GlobalStyle>
             <App />
