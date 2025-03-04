@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './SignUp.module.scss';
 import image from '~/assets/image';
-import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
 import classNames from 'classnames/bind';
 import Button from '~/components/Button/Button';
 
