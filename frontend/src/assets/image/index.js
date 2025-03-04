@@ -20,6 +20,11 @@ const image = {
     discover_04: require("~/assets/image/discover_image_04.png"),
     discover_05: require("~/assets/image/discover_image_05.png"),
     discover_06: require("~/assets/image/discover_image_06.png"),
+    discover_07: require("~/assets/image/discover_image_07.png"),
+    discover_08: require("~/assets/image/discover_image_08.png"),
+    discover_09: require("~/assets/image/discover_image_09.png"),
+    discover_10: require("~/assets/image/discover_image_10.png"),
+    discover_11: require("~/assets/image/discover_image_11.png"),
     explore_img_01: require("~/assets/image/sydney_01.png"),
     explore_img_02: require("~/assets/image/sydney_02.png"),
     explore_img_03: require("~/assets/image/sydney_03.png"),
@@ -33,5 +38,7 @@ const image = {
     linked: require("~/assets/image/linked_in.svg").default,
     twitter: require("~/assets/image/twitter.svg").default,
     instagram: require("~/assets/image/insta.svg").default,
+    destination_bg: require("~/assets/image/destination_bg.png"),
+    destination_hero_img: require("~/assets/image/destination_hero_img.png"),
 };
 export default image;
