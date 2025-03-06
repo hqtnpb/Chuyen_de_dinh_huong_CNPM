@@ -8,6 +8,7 @@ import SignUp from "~/pages/SignUp";
 import Login from "~/pages/Login";
 import Popup from "~/components/PopUp";
 import About from "~/pages/About";
+import SpotDetails from "~/pages/SpotDetails";
 
 //public routes
 const publicRoutes = [
@@ -18,6 +19,7 @@ const publicRoutes = [
     { path: "/signin", component: Login, layout: HeaderOnly },
     { path: "/popup", component: Popup,},
     { path: "/about", component: About,},
+    { path: "/spotdetails", component: SpotDetails},
 ];
 
 //private routes
