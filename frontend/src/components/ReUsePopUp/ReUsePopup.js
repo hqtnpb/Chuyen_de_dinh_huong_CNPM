@@ -6,7 +6,7 @@ import styles from "./ReUsePopup.module.scss";
 
 const cx = classNames.bind(styles);
 
-function ReUsePopup({ isOpen, onClose, title, desc, form, children, imageSrc, buttonText, onButtonClick }) {
+function ReUsePopup({ isOpen, onClose, title, desc, children, imageSrc, buttonText, onButtonClick }) {
     if (!isOpen) return null;
 
     return (
@@ -21,11 +21,7 @@ function ReUsePopup({ isOpen, onClose, title, desc, form, children, imageSrc, bu
                         {buttonText && <Button active className={cx("btn")} onClick={onButtonClick}>{buttonText}</Button>}
                         {desc && <p className={cx("desc")}>{desc}</p>}
                     </div>
-                    <div className={cx("form")}>
-                        {form &&<input className={cx("input")} type="email" placeholder="Your email address" />}
-                        <Button className={cx("close")} onClick={onClose}>X</Button>
-                    </div>
-
+                    <Button className={cx("close")} onClick={onClose}>X</Button>
                 </div>
             </div>
         </div>

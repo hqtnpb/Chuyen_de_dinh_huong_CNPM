@@ -55,5 +55,9 @@ const image = {
     icon_value_about: require("~/assets/image/icon_value_about.svg").default,
     icon_peace_about: require("~/assets/image/icon_peace_about.svg").default,
     icon_X_popup: require("~/assets/image/icon_X_popup.svg").default,
+    spotdetails_img: require("~/assets/image/spotdetails_img.png"),
+    spotdetails_background: require("~/assets/image/spotdetails_backgound.svg").default,
+    icon_spotdetails: require("~/assets/image/icon_spotdetails.svg").default,
+    
 };
 export default image;
