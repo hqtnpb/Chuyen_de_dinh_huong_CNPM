@@ -18,8 +18,8 @@ const publicRoutes = [
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
     { path: "/error", component: Error },
-    { path: "/popup", component: Popup,},
-    { path: "/about", component: About,},
+    { path: "/popup", component: Popup },
+    { path: "/about", component: About },
 ];
 
 //private routes
