@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Login.scss";
+import styles from "./Login.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
 import Button from "~/components/Button/Button";
