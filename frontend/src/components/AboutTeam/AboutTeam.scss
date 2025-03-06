@@ -10,28 +10,18 @@
                 width: 570px;
                 color: #191B1D;
                 text-align: center;
-                font-family: Syne;
                 font-size: 5.2rem;
-                font-style: normal;
                 font-weight: 700;
                 line-height: 1.07;
             }
 
-            .member {
-                padding-top: 70px;
+            .member-list {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                padding-bottom: 100px;
+                margin-top: 70px;
+                column-gap: 30px;
 
-                .member-list {
-                    
-                    color: #191B1D;
-                    font-family: Syne;
-                    font-size: 2.2rem;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 1.27;
-                    border-radius: 12px;
+                .member {
 
                     .avt {
                         width: 370px;
@@ -47,12 +37,17 @@
                     .blue {
                         background: rgba(205, 233, 234, 0.8);
                     }
-                    
+
+                    .name {
+                        color:#191B1D;
+                        font-size: 2.2rem;
+                        font-weight: 700;
+                        line-height: 1.27;
+                    }
+
 
                 }
-                .member-list:not(:first-child){
-                    margin-left: 30px;
-                }
+
 
             }
         }

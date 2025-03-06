@@ -21,7 +21,7 @@ function MissionAbout() {
                         <div className={cx("trip")}>
                             <div className={cx("list")}>
                                 <img className={cx("img")} src={image.icon_guidance_about} alt="Guidance" />
-                                <h7 className={cx("title-list")}>Trip Guidance</h7>
+                                <h3 className={cx("title-list")}>Trip Guidance</h3>
                                 <p className={cx("desc-list")}>
                                     Discover some of the most unique and fulfilling experiences your next destination has to offer. Providing the best.
                                 </p>
@@ -29,7 +29,7 @@ function MissionAbout() {
                             </div>
                             <div className={cx("list")}>
                                 <img className={cx("img")} src={image.icon_value_about} alt="Value" />
-                                <h7 className={cx("title-list")}>Trip Value</h7>
+                                <h3 className={cx("title-list")}>Trip Value</h3>
                                 <p className={cx("desc-list")}>
                                     Tips & Travel trends to help you pick the perfect time to visit this destination. Providing the best tips for you.
                                 </p>
@@ -38,7 +38,7 @@ function MissionAbout() {
                             </div>
                             <div className={cx("list")}>
                                 <img className={cx("img")} src={image.icon_peace_about} alt="Peace" />
-                                <h7 className={cx("title-list")}>Peace of Mind</h7>
+                                <h3 className={cx("title-list")}>Peace of Mind</h3>
                                 <p className={cx("desc-list")}>
                                     Golden rules to keep in mind when traveling to this destination. Providing the best tips & tricks for you.
                                 </p>
