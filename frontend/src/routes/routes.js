@@ -6,6 +6,7 @@ import Destination from "~/pages/Destination";
 import Upload from "~/pages/Upload";
 import SignUp from "~/pages/SignUp";
 import Login from "~/pages/Login";
+import Error from "~/components/Error";
 import Popup from "~/components/PopUp";
 import About from "~/pages/About";
 
@@ -16,6 +17,7 @@ const publicRoutes = [
     { path: "/upload", component: Upload, layout: HeaderOnly },
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
+    { path: "/error", component: Error },
     { path: "/popup", component: Popup,},
     { path: "/about", component: About,},
 ];
