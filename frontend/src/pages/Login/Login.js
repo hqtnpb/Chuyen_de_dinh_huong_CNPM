@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./Login.module.scss";
 import classNames from "classnames/bind";
 import { Link, Navigate } from "react-router-dom";
@@ -6,7 +6,6 @@ import { Toaster, toast } from "react-hot-toast";
 import axios from "axios";
 import { useContext } from "react";
 
-import styles from "./Login.scss";
 import image from "~/assets/image";
 import Button from "~/components/Button/Button";
 import { storeInSession } from "~/common/session";
@@ -19,7 +18,6 @@ function Login() {
         userAuth: { accessToken },
         setUserAuth,
     } = useContext(UserContext);
-    console.log(accessToken);
 
     const userAuthThroughServer = (serverRoute, formData) => {
         axios
