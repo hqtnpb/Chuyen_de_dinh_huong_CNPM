@@ -16,7 +16,6 @@ function SignUp() {
             .post(process.env.REACT_APP_SERVER_DOMAIN + serverRoute, formData)
             .then(({ data }) => {
                 storeInSession("user", JSON.stringify(data));
-                console.log(storeInSession);
             })
             .catch(({ response }) => {
                 toast.error(response.data.error);
