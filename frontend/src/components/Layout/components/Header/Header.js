@@ -1,34 +1,55 @@
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+
+import { UserContext } from "~/App";
 import styles from "./Header.module.scss";
 import Button from "~/components/Button/Button";
 import image from "~/assets/image";
 const cx = classNames.bind(styles);
 
 function Header() {
+    const {
+        userAuth,
+        userAuth: { accessToken, profile_img },
+    } = useContext(UserContext);
     return (
         <header className={cx("header")}>
             <div className={cx("container")}>
                 <div className={cx("inner")}>
                     <div className={cx("logo")}>
-                        <img src={image.logo} alt="Path Way" />
+                        <Link to="/">
+                            <img src={image.logo} alt="Path Way" />
+                        </Link>
                     </div>
 
                     <nav className={cx("navbar")}>
                         <ul className={cx("navbar__list")}>
                             <li className={cx("navbar__item")}>
-                                <a className={cx("navbar__link")} href="#!">
+                                <Link
+                                    to="/destination"
+                                    className={cx("navbar__link")}
+                                >
                                     Destinations
-                                </a>
+                                </Link>
                             </li>
                             <li className={cx("navbar__item")}>
-                                <a className={cx("navbar__link")} href="#!">
+                                <Link
+                                    to="/about"
+                                    className={cx("navbar__link")}
+                                    href="#!"
+                                >
                                     About
-                                </a>
+                                </Link>
                             </li>
                             <li className={cx("navbar__item")}>
-                                <a className={cx("navbar__link")} href="#!">
+                                <Link
+                                    to="/blog"
+                                    className={cx("navbar__link")}
+                                    href="#!"
+                                >
                                     Blog
-                                </a>
+                                </Link>
                             </li>
                             <li className={cx("navbar__item")}>
                                 <a className={cx("navbar__link")} href="#!">
@@ -38,12 +59,19 @@ function Header() {
                         </ul>
                     </nav>
 
-                    <div className={cx("action")}>
-                        <Button>Log In</Button>
-                        <Button active className={cx("action__btn")}>
-                            Sign Up
-                        </Button>
-                    </div>
+                    {accessToken ? (
+                        "user is logged in"
+                    ) : (
+                        <div className={cx("action")}>
+                            <Button text>
+                                <Link to="/signin">Log In</Link>
+                            </Button>
+
+                            <Button active className={cx("action__btn")}>
+                                <Link to="/signup">Sign Up</Link>
+                            </Button>
+                        </div>
+                    )}
                 </div>
             </div>
         </header>
