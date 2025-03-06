@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HeroAbout.scss";
+import styles from "./HeroAbout.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
 

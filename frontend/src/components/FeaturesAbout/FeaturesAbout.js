@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FeaturesAbout.scss";
+import styles from "./FeaturesAbout.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
 import { Button } from "@mui/material";

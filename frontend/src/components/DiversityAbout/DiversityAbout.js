@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./DiversityAbout.scss";
+import styles from "./DiversityAbout.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
 

@@ -28,7 +28,6 @@ function Popup() {
                             <Button className={cx("close")} onClick={handleModal}>X</Button>
                         </div>
                     </div>
-
                 </div>
             )}
         </div>

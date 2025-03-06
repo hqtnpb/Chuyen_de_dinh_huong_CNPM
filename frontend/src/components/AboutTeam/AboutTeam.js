@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./AboutTeam.scss";
+import styles from "./AboutTeam.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
 
