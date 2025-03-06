@@ -5,6 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "~/components/GlobalStyle";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
+import Popup from "./components/PopUp";
+import About from "./pages/About";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
