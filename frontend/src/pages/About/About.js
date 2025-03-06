@@ -1,5 +1,3 @@
-function About() {
-    return <h2>About</h2>;
-}
+function About() {}
 
 export default About;
