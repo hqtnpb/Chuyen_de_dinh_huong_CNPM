@@ -1,0 +1,58 @@
+.team {
+    background: #FFF9E5;
+
+    .container {
+        .inner {
+            padding-top: 150px;
+
+            .title {
+                margin: 0 auto;
+                width: 570px;
+                color: #191B1D;
+                text-align: center;
+                font-family: Syne;
+                font-size: 5.2rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.07;
+            }
+
+            .member {
+                padding-top: 70px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                padding-bottom: 100px;
+
+                .member-list {
+                    margin-left: 30px;
+                    color: #191B1D;
+                    font-family: Syne;
+                    font-size: 2.2rem;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 1.27;
+                    border-radius: 12px;
+
+                    .avt {
+                        width: 370px;
+                        border-radius: 12px;
+                        margin-bottom: 18px;
+                        background: #1EB482;
+                    }
+
+                    .orange {
+                        background: #FF5B26;
+                    }
+
+                    .blue {
+                        background: #05AAFF;
+                    }
+                    
+
+                }
+
+            }
+        }
+
+    }
+}
