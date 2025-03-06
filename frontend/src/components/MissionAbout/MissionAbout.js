@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MissionAbout.scss";
+import styles from "./MissionAbout.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
 import { Button } from "@mui/material";
