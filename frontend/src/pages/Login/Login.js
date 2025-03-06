@@ -3,11 +3,13 @@ import styles from "./Login.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
 import Button from "~/components/Button/Button";
+import Popup from "~/components/PopUp";
 
 const cx = classNames.bind(styles);
 function Login() {
     return (
         <div className={cx("login")}>
+            <Popup></Popup>
             <div className={cx("main")}>
                 <img
                     className={cx("img")}
