@@ -1,0 +1,54 @@
+.team {
+    background: #FFF9E5;
+        .inner {
+            padding-top: 150px;
+
+            .title {
+                margin: 0 auto;
+                width: 570px;
+                color: #191B1D;
+                text-align: center;
+                font-size: 5.2rem;
+                font-weight: 700;
+                line-height: 1.07;
+            }
+
+            .member-list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 70px;
+                column-gap: 30px;
+
+                .member {
+
+                    .avt {
+                        width: 370px;
+                        border-radius: 12px;
+                        margin-bottom: 18px;
+                        background: rgba(210, 235, 209, 0.8);
+                    }
+
+                    .orange {
+                        background: rgba(255, 217, 191, 0.8);
+                    }
+
+                    .blue {
+                        background: rgba(205, 233, 234, 0.8);
+                    }
+
+                    .name {
+                        color:#191B1D;
+                        font-size: 2.2rem;
+                        font-weight: 700;
+                        line-height: 1.27;
+                    }
+
+
+                }
+
+
+            }
+        }
+
+    
+}

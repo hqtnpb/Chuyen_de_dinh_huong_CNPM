@@ -1,0 +1,64 @@
+.popup {
+    transform: translate(50%, 20%);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 770px;
+    height: 522px;
+    justify-content: center;
+
+    .inner {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        border-radius: 12px;
+        background: #FFF;
+
+        .img {
+
+            width: 370px;
+            border-radius: 12px 0px 0px 12px;
+            margin-left: -24px;
+        }
+
+        .content {
+            margin-left: 30px;
+            .title {
+                width: 340px;
+                color: #191B1D;
+                font-family: Syne;
+                font-size: 5.2rem;
+                font-weight: 700;
+                line-height: 1.07;
+                margin-top: 80px;
+                right: 0;
+            }
+
+            .btn {
+                width: 340px;
+                padding: 15px;
+                color: #FFF;
+                text-align: center;
+                font-family: Manrope;
+                font-style: normal;
+                font-size: 1.8rem;
+                font-weight: 600;
+                line-height: 1.6;
+                border-radius: 30px;
+                background: #1EB482;
+                margin-top: 38px;
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 10px;
+            font-weight: 700;
+            font-size: 3rem;
+            font-family: Syne;
+            cursor: pointer;
+            width: 16px;
+            padding-left: 30px;
+        }
+    }
+}
