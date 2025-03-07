@@ -17,6 +17,7 @@ function HeroSection({
     description,
     showForm = true,
     destination,
+    spotdetails,
     className,
     children,
     ...props
@@ -48,7 +49,7 @@ function HeroSection({
         };
     }, []);
     const classes = cx("hero", {
-        destination,
+        destination,spotdetails,
         [className]: className,
     });
     return (
