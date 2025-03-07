@@ -22,6 +22,7 @@ function SpotDetails() {
 
                     </div>
                 </HeroSection>
+                
             </div>
         </div>
     );
