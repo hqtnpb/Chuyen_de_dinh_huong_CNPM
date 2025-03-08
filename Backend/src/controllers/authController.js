@@ -84,7 +84,6 @@ const authController = {
 
         try {
             const user = await User.findOne({ "personal_info.email": email });
-            console.log(user);
 
             if (!user) {
                 return res.status(400).json({ error: "Email is not found" });
