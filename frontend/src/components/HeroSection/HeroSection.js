@@ -17,6 +17,7 @@ function HeroSection({
     description,
     showForm = true,
     destination,
+    more,
     className,
     children,
     ...props
@@ -49,6 +50,7 @@ function HeroSection({
     }, []);
     const classes = cx("hero", {
         destination,
+        more,
         [className]: className,
     });
     return (
