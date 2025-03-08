@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
+const jwt = require("jsonwebtoken");
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ const app = express();
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URL, {
+            autoIndex: true,
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
