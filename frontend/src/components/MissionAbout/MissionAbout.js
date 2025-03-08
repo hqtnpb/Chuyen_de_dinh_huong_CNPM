@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./MissionAbout.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
-import { Button } from "@mui/material";
 
 const cx = classNames.bind(styles);
 function MissionAbout() {
