@@ -43,6 +43,11 @@
             width: 370px; 
             column-gap: 30px;
             margin-top: 70px;
+            transition: transform ease 0.3s;
         }
     }
+}
+
+:hover.card-list{
+    transition: scale(1.1);
 }
