@@ -14,6 +14,7 @@ function Card({
     discover = false,
     explore = false,
     destination = false,
+    popular = false,
     className,
     ...passProps
 }) {
@@ -21,6 +22,7 @@ function Card({
         discover,
         explore,
         destination,
+        popular,
         [className]: className,
     });
     return (
