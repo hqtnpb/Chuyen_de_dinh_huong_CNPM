@@ -1,0 +1,37 @@
+.view {
+    .inner {
+        .content {
+            display: flex;
+
+            .card-list {
+                margin-top: 15px;
+            }
+
+            .map {
+
+                margin-top: 70px;
+                margin-left: 130px;
+                width: 470px;
+                height: 500px;
+                border-radius: 12px;
+            }
+
+        }
+
+        .btn {
+            color: #191B1D;
+            text-align: center;
+            font-family: Manrope;
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.66;
+            display: inline-flex;
+            padding: 15px 35px;
+            align-items: flex-start;
+            gap: 10px;
+            border-radius: 60px;
+            background: #FFC200;
+            margin-top: 70px;
+        }
+    }
+}
