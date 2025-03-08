@@ -166,8 +166,9 @@
 
 //Popular Card
 .popular {
-    .card-img{
+    .card-img {
         position: relative;
+
         .image {
             width: 370px;
             border-radius: 12px;
@@ -176,47 +177,58 @@
 
     }
 
-    .category {
-        margin-top: 16px;
-        color: #4E5358;
-        font-family: Manrope;
-        font-size: 1.6rem;
-        font-weight: 400;
-        line-height: 1.75;
-    }
+    .content {
+        
 
-    .title {
-        margin-top: 4px;
-        color: #191B1D;
-        font-size: 2.2rem;
-        font-weight: 700;
-        line-height: 1.27;
-    }
-
-    .rate {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 18px;
-        padding: 4px 12px;
-        border-radius: 6px;
-        background: #FFF;
-
-        .star {
-            width: 14px;
-            height: 14px;
-        }
-
-        .rating {
-            color: #191B1D;
+        .category {
+            margin-top: 16px;
+            color: #4E5358;
             font-family: Manrope;
-            font-size: 1.4rem;
-            font-weight: 600;
-            line-height: 1.71;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.75;
+            
         }
+
+        .title {
+            margin-top: 4px;
+            color: #191B1D;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.27;
+            
+            
+        }
+
+        .rate {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 18px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            background: #FFF;
+
+            .star {
+                width: 14px;
+                height: 14px;
+            }
+
+            .rating {
+                color: #191B1D;
+                font-family: Manrope;
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 1.71;
+            }
+        }
+    
     }
+
     &:hover .image {
         transform: scale(1.1);
     }
+    
+
 
 }
