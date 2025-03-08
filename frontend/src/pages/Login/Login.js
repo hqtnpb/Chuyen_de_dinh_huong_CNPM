@@ -71,7 +71,6 @@ function Login() {
         <Navigate to="/" />
     ) : (
         <div className={cx("login")}>
-            <Popup></Popup>
             <div className={cx("main")}>
                 <img
                     className={cx("img")}
