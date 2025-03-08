@@ -16,8 +16,9 @@ function HeroSection({
     title,
     description,
     showForm = true,
-    destination,
+    more,
     spotdetails,
+    destination,
     className,
     children,
     ...props
@@ -49,7 +50,9 @@ function HeroSection({
         };
     }, []);
     const classes = cx("hero", {
-        destination,spotdetails,
+        destination,
+        spotdetails,
+        more,
         [className]: className,
     });
     return (
@@ -130,13 +133,12 @@ function HeroSection({
                                 alt="Path Way"
                             ></img>
                         )}
-                        
+
                         {children}
                     </div>
                 </div>
             </div>
         </section>
-        
     );
 }
 

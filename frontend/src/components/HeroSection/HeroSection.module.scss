@@ -1,3 +1,14 @@
+.more {
+    .background {
+        position: relative;
+        object-fit: cover;
+        height: 727px;
+    }
+    .title {
+        width: 870px;
+    }
+}
+
 .hero {
     background-color: #fff9e5;
 }
@@ -22,7 +33,7 @@
         text-align: center;
 
         .title {
-            width: 770px;
+            width: 870px;
             color: #191b1d;
             font-size: 7.2rem;
             font-weight: 700;
@@ -32,7 +43,7 @@
         .desc {
             margin-top: 18px;
             text-align: center;
-            width: 576px;
+            width: 770px;
             color: #4e5358;
             font-size: 1.8rem;
             font-weight: 400;

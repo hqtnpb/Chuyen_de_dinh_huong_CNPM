@@ -9,6 +9,7 @@ import Login from "~/pages/Login";
 import Error from "~/components/Error";
 import Popup from "~/components/PopUp";
 import About from "~/pages/About";
+import MoreInPlace from "~/pages/MoreInPlace";
 import SpotDetails from "~/pages/SpotDetails";
 
 //public routes
@@ -18,10 +19,11 @@ const publicRoutes = [
     { path: "/upload", component: Upload, layout: HeaderOnly },
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
-    { path: "/popup", component: Popup,},
-    { path: "/about", component: About,},
-    { path: "/spotdetails", component: SpotDetails},
-    { path: "/error", component: Error,},
+    { path: "/error", component: Error },
+    { path: "/more", component: MoreInPlace },
+    { path: "/popup", component: Popup },
+    { path: "/about", component: About },
+    { path: "/spotdetails", component: SpotDetails },
 ];
 
 //private routes
