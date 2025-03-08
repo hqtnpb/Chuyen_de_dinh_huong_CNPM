@@ -21,7 +21,7 @@ const publicRoutes = [
     { path: "/popup", component: Popup,},
     { path: "/about", component: About,},
     { path: "/spotdetails", component: SpotDetails},
-    { path: "/error", component: Error},
+    { path: "/error", component: Error,},
 ];
 
 //private routes
