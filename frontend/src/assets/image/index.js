@@ -58,6 +58,8 @@ const image = {
     spotdetails_img: require("~/assets/image/spotdetails_img.png"),
     spotdetails_background: require("~/assets/image/spotdetails_backgound.svg").default,
     icon_spotdetails: require("~/assets/image/icon_spotdetails.svg").default,
-    
+    popular_sydney_01: require("~/assets/image/popular_sydney_01.png"),
+    popular_sydney_02: require("~/assets/image/popular_sydney_02.png"),
+    popular_sydney_03: require("~/assets/image/popular_sydney_03.png"),
 };
 export default image;

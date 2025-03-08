@@ -8,10 +8,46 @@
 
     .location {
         margin-left: 6px;
-        color:#4E5358;
+        color: #4E5358;
         font-family: Manrope;
         font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.75;
     }
+}
+
+.popular {
+    margin-top: 165px;
+    .inner {
+        .content {
+            .title {
+                width: 670px;
+                color: #191B1D;
+                font-size: 5.2rem;
+                font-weight: 700;
+                line-height: 1.07;
+            }
+            
+        }
+        .btn{
+            position: absolute;
+            padding: 15px 35px;
+            gap: 10px;
+            border-radius: 60px;
+            margin-top: -70px;
+            right: 170px;
+        }
+        .card-list{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 370px; 
+            column-gap: 30px;
+            margin-top: 70px;
+            transition: transform ease 0.3s;
+        }
+    }
+}
+
+:hover.card-list{
+    transition: scale(1.1);
 }
