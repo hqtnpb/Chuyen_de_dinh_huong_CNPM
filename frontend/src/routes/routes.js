@@ -6,6 +6,7 @@ import Destination from "~/pages/Destination";
 import Upload from "~/pages/Upload";
 import SignUp from "~/pages/SignUp";
 import Login from "~/pages/Login";
+import Error from "~/components/Error";
 import Popup from "~/components/PopUp";
 import About from "~/pages/About";
 import SpotDetails from "~/pages/SpotDetails";
