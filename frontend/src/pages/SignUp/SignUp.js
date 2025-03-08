@@ -1,11 +1,63 @@
-import React from "react";
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
 import styles from "./SignUp.module.scss";
 import image from "~/assets/image";
 import classNames from "classnames/bind";
 import Button from "~/components/Button/Button";
+import axios from "axios";
+import { storeInSession } from "~/common/session";
 
 const cx = classNames.bind(styles);
 function SignUp() {
+    const authForm = useRef();
+    const userAuthThroughServer = (serverRoute, formData) => {
+        axios
+            .post(process.env.REACT_APP_SERVER_DOMAIN + serverRoute, formData)
+            .then(({ data }) => {
+                storeInSession("user", JSON.stringify(data));
+            })
+            .catch(({ response }) => {
+                toast.error(response.data.error);
+            });
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        let serverRoute = "/signup";
+
+        //regex
+        let emailRegex =
+            /^(?!.*\.\.)(?!.*\.$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let passwordRegex =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        //form data
+        let form = new FormData(authForm.current);
+        let formData = {};
+
+        for (let [key, value] of form.entries()) {
+            formData[key] = value;
+        }
+
+        let { email, password } = formData;
+
+        //form validation
+        if (!email.length) {
+            return toast.error("Email is required");
+        }
+
+        if (!emailRegex.test(email)) {
+            return toast.error("Email is not valid");
+        }
+
+        if (!passwordRegex.test(password)) {
+            return toast.error(
+                "Password must be at least 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character"
+            );
+        }
+        userAuthThroughServer(serverRoute, formData);
+    };
     return (
         <div className={cx("signup")}>
             <div className={cx("inner")}>
@@ -14,6 +66,7 @@ function SignUp() {
                     src={image.background_signup}
                     alt="Background"
                 />
+                <Toaster />
                 <div className={cx("signup-box")}>
                     <h2 className={cx("title")}>Sign Up</h2>
                     <div className={cx("btn")}>
@@ -46,19 +99,7 @@ function SignUp() {
                         </div>
                     </div>
                     <div className={cx("separator")}>OR</div>
-                    <form className={cx("form")}>
-                        <input
-                            className={cx("input")}
-                            type="text"
-                            name="firstName"
-                            placeholder="Your first name"
-                        />
-                        <input
-                            className={cx("input")}
-                            type="text"
-                            name="lastName"
-                            placeholder="Your last name"
-                        />
+                    <form ref={authForm} className={cx("form")}>
                         <input
                             className={cx("input")}
                             type="email"
@@ -71,15 +112,19 @@ function SignUp() {
                             name="password"
                             placeholder="Password"
                         />
-                        <Button active className={cx("btn")}>
+                        <Button
+                            active
+                            onClick={handleSubmit}
+                            className={cx("btn")}
+                        >
                             Sign Up
                         </Button>
                     </form>
                     <div className={cx("action")}>
                         <p className={cx("link")}>Have an account? </p>
-                        <a href="/Login" className={cx("signin")}>
+                        <Link to="/signin" className={cx("signin")}>
                             Sign In
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
