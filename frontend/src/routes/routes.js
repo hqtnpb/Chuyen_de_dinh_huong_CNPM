@@ -10,6 +10,7 @@ import Error from "~/components/Error";
 import Popup from "~/components/PopUp";
 import About from "~/pages/About";
 import MoreInPlace from "~/pages/MoreInPlace";
+import SpotDetails from "~/pages/SpotDetails";
 
 //public routes
 const publicRoutes = [
@@ -19,9 +20,10 @@ const publicRoutes = [
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
     { path: "/error", component: Error },
+    { path: "/more", component: MoreInPlace },
     { path: "/popup", component: Popup },
     { path: "/about", component: About },
-    { path: "/more", component: MoreInPlace },
+    { path: "/spotdetails", component: SpotDetails },
 ];
 
 //private routes
