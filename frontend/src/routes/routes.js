@@ -17,7 +17,7 @@ const publicRoutes = [
     { path: "/upload", component: Upload, layout: HeaderOnly },
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
-    { path: "/error", component: Error },
+    { path: "/error", component: Error, layout: Error },
     { path: "/popup", component: Popup },
     { path: "/about", component: About },
 ];
