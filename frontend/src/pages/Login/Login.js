@@ -75,7 +75,7 @@ function Login() {
                 <img
                     className={cx("img")}
                     src={image.background_login}
-                    alt="Login"
+                    alt="Sign In"
                 />
                 <Toaster />
                 <div className={cx("box")}>
