@@ -63,5 +63,22 @@ const image = {
     popular_sydney_02: require("~/assets/image/popular_sydney_02.png"),
     popular_sydney_03: require("~/assets/image/popular_sydney_03.png"),
     contact_img: require("~/assets/image/contact_img_01.png"),
+    more_img_01: require("~/assets/image/more_img_01.png"),
+    more_img_02: require("~/assets/image/more_img_02.png"),
+    more_img_03: require("~/assets/image/more_img_03.png"),
+    more_img_04: require("~/assets/image/more_img_04.png"),
+    more_img_05: require("~/assets/image/more_img_05.png"),
+    more_img_06: require("~/assets/image/more_img_06.png"),
+    more_img_07: require("~/assets/image/more_img_07.png"),
+    more_img_08: require("~/assets/image/more_img_08.png"),
+    more_img_09: require("~/assets/image/more_img_09.png"),
+    more_img_10: require("~/assets/image/more_img_10.png"),
+    more_img_11: require("~/assets/image/more_img_11.png"),
+    more_img_12: require("~/assets/image/more_img_12.png"),
+    more_img_13: require("~/assets/image/more_img_13.png"),
+    more_img_14: require("~/assets/image/more_img_14.png"),
+    more_img_15: require("~/assets/image/more_img_15.png"),
+    more_img_16: require("~/assets/image/more_img_16.png"),
+
 };
 export default image;
