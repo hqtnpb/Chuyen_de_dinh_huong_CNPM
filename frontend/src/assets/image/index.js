@@ -62,5 +62,6 @@ const image = {
     popular_sydney_01: require("~/assets/image/popular_sydney_01.png"),
     popular_sydney_02: require("~/assets/image/popular_sydney_02.png"),
     popular_sydney_03: require("~/assets/image/popular_sydney_03.png"),
+    contact_img: require("~/assets/image/contact_img_01.png"),
 };
 export default image;
