@@ -11,6 +11,8 @@ import Popup from "~/components/PopUp";
 import About from "~/pages/About";
 import MoreInPlace from "~/pages/MoreInPlace";
 import SpotDetails from "~/pages/SpotDetails";
+import SearchResult from "~/pages/SearchResults";
+
 
 //public routes
 const publicRoutes = [
@@ -24,6 +26,7 @@ const publicRoutes = [
     { path: "/popup", component: Popup },
     { path: "/about", component: About },
     { path: "/spotdetails", component: SpotDetails },
+    { path: "/searchresult", component: SearchResult},
 ];
 
 //private routes

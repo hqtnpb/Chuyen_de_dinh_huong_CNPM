@@ -9,7 +9,6 @@ function Popup() {
     const [isPopupOpen, setIsPopupOpen] = useState(true);
 
     return (
-
         <div className={cx("modal")}>
             <ReUsePopup
                 isOpen={isPopupOpen}

@@ -4,6 +4,7 @@
         object-fit: cover;
         height: 727px;
     }
+
     .title {
         width: 870px;
     }
@@ -159,16 +160,47 @@
             text-align: left;
             transform: translateX(-17%);
             width: 870px;
-            color:#4E5358;
+            color: #4E5358;
             font-family: Manrope;
             font-size: 1.8rem;
             font-weight: 400;
             line-height: 1.66;
             margin-top: 18px;
         }
-        .image{
+
+        .image {
             margin-top: 55px;
             border-radius: 24px;
         }
+    }
+}
+
+.searchresult {
+    .background {
+        width: 100%;
+    }
+    .content {
+        display: block;
+        text-align: left;
+        left: 0;
+        .title {
+            color: #191B1D;
+            font-size: 5.2rem;
+            font-weight: 700;
+            line-height: 1.07;
+            
+        }
+
+        .desc {
+            width: 470px;
+            color:#4E5358;
+            font-family: Manrope;
+            font-size: 1.8rem;
+            font-weight: 400;
+            line-height: 1.66;
+            text-align: left;
+        }
+        
+
     }
 }

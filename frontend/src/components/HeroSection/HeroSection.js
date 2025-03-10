@@ -18,6 +18,7 @@ function HeroSection({
     showForm = true,
     more,
     spotdetails,
+    searchresult,
     destination,
     className,
     children,
@@ -52,6 +53,7 @@ function HeroSection({
     const classes = cx("hero", {
         destination,
         spotdetails,
+        searchresult,
         more,
         [className]: className,
     });
