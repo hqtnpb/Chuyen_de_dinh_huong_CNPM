@@ -2,9 +2,8 @@
     font-weight: 600;
     border-radius: 999px;
     cursor: pointer;
-    background-color: transparent; 
+    background-color: transparent;
     user-select: none;
-    
     + .wrapper {
         margin-left: 20px;
     }
@@ -20,7 +19,7 @@
     color: #fff;
     font-weight: 600;
     background-color: #ff5b26;
-
+    
     &:hover {
         background: #eb5829;
         color: #fff;
