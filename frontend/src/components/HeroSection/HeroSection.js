@@ -18,6 +18,7 @@ function HeroSection({
     showForm = true,
     more,
     spotdetails,
+    searchresult,
     destination,
     className,
     children,
