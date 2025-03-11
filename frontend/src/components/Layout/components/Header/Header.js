@@ -1,11 +1,15 @@
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 import { UserContext } from "~/App";
 import styles from "./Header.module.scss";
 import Button from "~/components/Button/Button";
 import image from "~/assets/image";
+import UserNavigation from "~/components/UserNavigation";
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -13,6 +17,8 @@ function Header() {
         userAuth,
         userAuth: { accessToken, profile_img },
     } = useContext(UserContext);
+    const [userNavPanel, setUserNavPanel] = useState(false);
+
     return (
         <header className={cx("header")}>
             <div className={cx("container")}>
@@ -60,11 +66,31 @@ function Header() {
                     </nav>
 
                     {accessToken ? (
-                        "user is logged in"
+                        <div className={cx("user")}>
+                            <Link to="/dashboard/notification">
+                                <button className={cx("btn")}>
+                                    <FontAwesomeIcon icon={faBell} size="lg" />
+                                </button>
+                            </Link>
+                            <div className={cx("profile")}>
+                                <img
+                                    className={cx("user-avt")}
+                                    src={profile_img}
+                                    onClick={() =>
+                                        setUserNavPanel(!userNavPanel)
+                                    }
+                                ></img>
+                            </div>
+                            {userNavPanel ? (
+                                <UserNavigation></UserNavigation>
+                            ) : (
+                                ""
+                            )}
+                        </div>
                     ) : (
                         <div className={cx("action")}>
                             <Button text>
-                                <Link to="/signin">Log In</Link>
+                                <Link to="/signin">Sign In</Link>
                             </Button>
 
                             <Button active className={cx("action__btn")}>
