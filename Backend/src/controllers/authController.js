@@ -3,6 +3,11 @@ const { nanoid } = require("nanoid");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
+const admin = require("firebase-admin");
+const serviceAccountKey = require("../../blog-website-e0d5a-firebase-adminsdk-fbsvc-d2d431c9f0.json");
+
+const { getAuth } = require("firebase-admin/auth");
+
 let emailRegex =
     /^(?!.*\.\.)(?!.*\.$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let passwordRegex =
@@ -33,6 +38,11 @@ const generatedUsername = async (email) => {
 
     return username;
 };
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccountKey),
+});
+
 const authController = {
     // Register
     registerUser: async (req, res) => {
@@ -78,7 +88,7 @@ const authController = {
             return res.status(500).json(error);
         }
     },
-    // Login
+    // Signin
     loginUser: async (req, res) => {
         let { email, password } = req.body;
 
@@ -88,20 +98,85 @@ const authController = {
             if (!user) {
                 return res.status(400).json({ error: "Email is not found" });
             }
-            const validPassword = await bcrypt.compare(
-                password,
-                user.personal_info.password
-            );
-            if (!validPassword) {
-                return res
-                    .status(400)
-                    .json({ error: "Email or password is incorrect" });
-            }
 
-            return res.status(200).json(formatDataToSend(user));
+            if (!user.google_auth) {
+                const validPassword = await bcrypt.compare(
+                    password,
+                    user.personal_info.password
+                );
+                if (!validPassword) {
+                    return res
+                        .status(400)
+                        .json({ error: "Email or password is incorrect" });
+                }
+
+                return res.status(200).json(formatDataToSend(user));
+            } else {
+                return res.status(403).json({
+                    error: "This email was signed up with google. Please sign in with google",
+                });
+            }
         } catch (error) {
             res.status(500).json(error);
         }
+    },
+
+    //Signin with Google
+    signinWithGoogle: async (req, res) => {
+        let { accessToken } = req.body;
+
+        getAuth()
+            .verifyIdToken(accessToken)
+            .then(async (decodedUser) => {
+                let { email, name, picture } = decodedUser;
+
+                picture = picture.replace("s96-c", "s384-c");
+
+                let user = await User.findOne({ "personal_info.email": email })
+                    .select(
+                        "personal_info.username personal_info.profile_img google_auth"
+                    )
+                    .then((u) => {
+                        return u || null;
+                    })
+                    .catch((error) => {
+                        return res.status(500).json({ error: error.message });
+                    });
+                if (user) {
+                    if (!user.google_auth) {
+                        return res.status(403).json({
+                            error: "This email was signed up without google. Please sign in with email and password",
+                        });
+                    }
+                } else {
+                    let username = await generatedUsername(email);
+
+                    user = new User({
+                        personal_info: {
+                            username: username,
+                            email: email,
+                        },
+                        google_auth: true,
+                    });
+
+                    await user
+                        .save()
+                        .then((u) => {
+                            user = u;
+                        })
+                        .catch((error) => {
+                            return res
+                                .status(500)
+                                .json({ error: error.message });
+                        });
+                }
+                return res.status(200).json(formatDataToSend(user));
+            })
+            .catch((error) => {
+                return res
+                    .status(500)
+                    .json({ error: "Fail to authenticate with google" });
+            });
     },
 };
 
