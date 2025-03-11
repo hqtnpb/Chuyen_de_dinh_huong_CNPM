@@ -15,6 +15,7 @@ function Card({
     explore = false,
     destination = false,
     popular = false,
+    searchresult=false,
     className,
     ...passProps
 }) {
@@ -23,6 +24,7 @@ function Card({
         explore,
         destination,
         popular,
+        searchresult,
         [className]: className,
     });
     return (
