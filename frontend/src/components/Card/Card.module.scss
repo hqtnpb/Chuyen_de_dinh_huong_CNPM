@@ -178,7 +178,7 @@
     }
 
     .content {
-        
+
 
         .category {
             margin-top: 16px;
@@ -187,7 +187,7 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.75;
-            
+
         }
 
         .title {
@@ -196,8 +196,8 @@
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.27;
-            
-            
+
+
         }
 
         .rate {
@@ -222,13 +222,80 @@
                 line-height: 1.71;
             }
         }
-    
+
     }
 
     &:hover .image {
         transform: scale(1.1);
     }
-    
 
+}
 
+//SearchResult Card
+.searchresult {
+    .card-img {
+        position: relative;
+
+        .image {
+            width: 370px;
+            border-radius: 12px;
+        }
+
+        .location {
+            position: absolute;
+            display: flex;
+            text-align: center;
+            top: 0;
+            right: 0;
+            margin: 18px;
+            padding: 4px 12px;
+            width: 90px;
+            border-radius: 6px;
+            background: #FFF;
+
+            .icon {
+                width: 12px;
+            }
+
+            .location-name {
+                margin-left: 4px;
+                color: #191B1D;
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 1.71;
+            }
+        }
+    }
+
+    .content {
+        .category {
+            margin-top: 18px;
+            color: #4E5358;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.75;
+        }
+
+        .title {
+            margin-top: 10px;
+            color: #191B1D;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.75;
+        }
+
+        .rate {
+            margin-top: 18px;
+            .star {
+                width: 20px;
+            }
+
+            .rating {
+                color: #191B1D;
+                font-size: 1.6rem;
+                font-weight: 600;
+                line-height: 1.75;
+            }
+        }
+    }
 }

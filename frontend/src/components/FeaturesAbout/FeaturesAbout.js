@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./FeaturesAbout.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/image";
-import { Button } from "@mui/material";
+import Button from "../Button";
 
 const cx = classNames.bind(styles)
 function FeaturesAbout() {

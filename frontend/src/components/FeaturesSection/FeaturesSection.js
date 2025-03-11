@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 import styles from "./FeaturesSection.module.scss";
-
 import Button from "../Button/Button";
 import image from "~/assets/image";
 const cx = classNames.bind(styles);
