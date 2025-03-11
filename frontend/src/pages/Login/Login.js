@@ -10,6 +10,7 @@ import image from "~/assets/image";
 import Button from "~/components/Button/Button";
 import { storeInSession } from "~/common/session";
 import { UserContext } from "~/App";
+import { authWithGoogle } from "~/common/firebase";
 
 const cx = classNames.bind(styles);
 function Login() {
@@ -67,6 +68,23 @@ function Login() {
         }
         userAuthThroughServer(serverRoute, formData);
     };
+    const handleGoogleAuth = (e) => {
+        e.preventDefault();
+        authWithGoogle()
+            .then((user) => {
+                let serverRoute = "/google-auth";
+
+                let formData = {
+                    accessToken: user.accessToken,
+                };
+                
+                userAuthThroughServer(serverRoute, formData);
+            })
+            .catch((error) => {
+                toast.error(error.message);
+                return console.log(error);
+            });
+    };
     return accessToken ? (
         <Navigate to="/" />
     ) : (
@@ -98,7 +116,11 @@ function Login() {
                                     src={image.icongoogle}
                                     alt="Google"
                                 />
-                                <Button inactive className={cx("auth-btn")}>
+                                <Button
+                                    inactive
+                                    className={cx("auth-btn")}
+                                    onClick={handleGoogleAuth}
+                                >
                                     Continue with Google
                                 </Button>
                             </div>
