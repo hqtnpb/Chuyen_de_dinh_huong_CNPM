@@ -3,9 +3,8 @@ import styles from "./SearchResult.module.scss";
 import image from "~/assets/image";
 import Button from "~/components/Button";
 import Card from "~/components/Card";
-import Paragraph from "~/components/Paragraph";
 import Planning from "~/components/Planning";
-
+import Trip from "~/components/Trip";
 
 const cx = classNames.bind(styles)
 const cardData = [
@@ -34,24 +33,68 @@ const cardData = [
     }
 ]
 
-const cardStory =[
+const cardStory = [
     {
         title: "A reason to travel to Sydney in December: the new Sydney...",
-        desc:"Sydney is much more than its beaches and landmarks. Meissa Mason shows you her idea of the perfect day in her hometown...",
+        desc: "Sydney is much more than its beaches and landmarks. Meissa Mason shows you her idea of the perfect day in her hometown...",
         image: image.story_explore_01,
     },
 
     {
         title: "4 days to connect with Sydney, Australia",
-        desc:"From hosting one of the largest Pride celebrations in the world to its new indigenous tours, return to Sydney to see it from a new perspective.",
+        desc: "From hosting one of the largest Pride celebrations in the world to its new indigenous tours, return to Sydney to see it from a new perspective.",
         image: image.story_explore_02,
     },
 
     {
         title: "Check out Meissa Mason's best day in Sydney, Australia",
-        desc:"Sydney is much more than its beaches and landmarks. Meissa Mason shows you her idea of the perfect day in her hometown...",
+        desc: "Sydney is much more than its beaches and landmarks. Meissa Mason shows you her idea of the perfect day in her hometown...",
         image: image.story_explore_03,
     }
+]
+
+const cardTrip =[
+    {
+        icon: image.icon_trip_01,
+        title:"Best Things to Do",
+        desc:"Discover some of the most unique and fulfilling experiences your next destination has to offer. Providing the best.",
+        arrow: image.icon_arrow_about,
+    },
+
+    {
+        icon: image.icon_trip_02,
+        title:"When to Visit",
+        desc:"Tips & Travel trends to help you pick the perfect time to visit this destination. Providing the best tips for you.",
+        arrow: image.icon_arrow_about,
+    },
+
+    {
+        icon: image.icon_trip_03,
+        title:"Things to Know",
+        desc:"Golden rules to keep in mind when traveling to this destination. Providing the best tips & tricks for you.",
+        arrow: image.icon_arrow_about,
+    },
+
+    {
+        icon: image.icon_trip_04,
+        title:"Neighborhoods to Explore",
+        desc:"Add visiting these must-see local hot spots and culture centers to your next travel itinerary. Providing the best tips.",
+        arrow: image.icon_arrow_about,
+    },
+
+    {
+        icon: image.icon_trip_05,
+        title:"Quick Trips",
+        desc:"Plan a day trip full of local flavor and get back in time with these same-day options. Providing the best tips & tricks for you.",
+        arrow: image.icon_arrow_about,
+    },
+
+    {
+        icon: image.icon_trip_06,
+        title:"Budget Friendly",
+        desc:"Deals and tips on ways to save without sacrificing the fun on your next trip. Providing the best tips & tricks for you.",
+        arrow: image.icon_arrow_about,
+    },
 ]
 function SearchResult() {
     return (
@@ -91,10 +134,10 @@ function SearchResult() {
                         <div className={cx("explore-text")}>
                             <h2 className={cx("explore-title")}>Explore Sydney</h2>
                             <select className={cx("option-list")}>
-                                <option className={cx("option")} value="Top Attractions">Top Attractions</option>
-                                <option className={cx("option")} value="Top Restaurants">Top Restaurants</option>
-                                <option className={cx("option")} value="Top Entertainment">Top Entertainment</option>
-                                <option className={cx("option")} value="Top Shopping">Top Shopping</option>
+                                <option className={cx("option")}>Top Attractions</option>
+                                <option className={cx("option")}>Top Restaurants</option>
+                                <option className={cx("option")}>Top Entertainment</option>
+                                <option className={cx("option")}>Top Shopping</option>
                             </select>
                         </div>
                         <div className={cx("card-list")}>
@@ -113,10 +156,23 @@ function SearchResult() {
                             ))}
                         </div>
                         <Button active className={cx("btn")}>More in Sydney</Button>
+
+                        <h2 className={cx("stories-title")}>Latest Stories from Sydney</h2>
+                        <div className={cx("stories-list")}>
+                            {cardStory.map((data, index) => (
+                                <Planning
+                                    key={index}
+                                    title={data.title}
+                                    desc={data.desc}
+                                    image={data.image}
+                                    planning></Planning>
+                            ))}
+                        </div>
+                        <Button active className={cx("view-stories")}>View All Stories</Button>
                     </div>
                 </div>
             </div>
-            <div className={cx("stories")}>
+            {/* <div className={cx("stories")}>
                 <div className={cx("container")}>
                     <div className={cx("stories-inner")}>
                         <h2 className={cx("stories-title")}>Latest Stories from Sydney</h2>
@@ -131,6 +187,26 @@ function SearchResult() {
                             ))}
                         </div>
                         <Button active className={cx("view-stories")}>View All Stories</Button>
+                    </div>
+                </div>
+            </div> */}
+            <div className={cx("trip")}>
+                <div className={cx("container")}>
+                    <div className={cx("trip-inner")}>
+                        <div className={cx("trip-content")}>
+                            <h2 className={cx("trip-title")}>Planning Toolkit</h2>
+                            <p className={cx("trip-desc")}>Imagine checking one place for your travel details and getting a heads up as things happen throughout your trip</p>
+                        </div>
+                        <div className={cx("trip-list")}>
+                            {cardTrip.map((data, index) =>(
+                                <Trip
+                                key={index}
+                                icon={data.icon}
+                                title={data.title}
+                                desc={data.desc}
+                                arrow={data.arrow}></Trip>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

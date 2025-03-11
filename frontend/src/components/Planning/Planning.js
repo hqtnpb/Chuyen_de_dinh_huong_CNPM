@@ -25,6 +25,7 @@ function Planning ({
                     <Button text className={cx("btn")}>Learn More</Button>
                 </div>
                 <img src={image} className={cx("img")}/>
+                {children}
             </div>
         </section>
      );

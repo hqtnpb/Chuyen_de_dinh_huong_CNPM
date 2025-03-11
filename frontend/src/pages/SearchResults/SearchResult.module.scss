@@ -149,37 +149,63 @@
             border-radius: 60px;
             cursor: pointer;
         }
-    }
-
-    .stories {
-        .stories-inner {
+        .stories-title {
             margin-top: 150px;
+            width: 570px;
+            color: #191B1D;
+            font-size: 5.2rem;
+            font-weight: 700;
+            line-height: 1.07;
+        }
 
-            .stories-title {
-                width: 570px;
-                color: #191B1D;
-                font-size: 5.2rem;
-                font-weight: 700;
-                line-height: 1.07;
-            }
+        .stories-list {
+            margin-top: 33px;
+        }
 
-            .stories-list {
-                margin-top: 33px;
-            }
-
-            .view-stories {
-                display: block;
-                margin: 55px auto 0;
-                color:#FFF;
-                text-align: center;
-                font-family: Manrope;
-                font-size: 1.8rem;
-                font-weight: 600;
-                line-height: 1.66;
-                padding: 15px 35px;
-                border-radius: 60px;
-                cursor: pointer;
-            }
+        .view-stories {
+            display: block;
+            margin: 55px auto 0;
+            color:#FFF;
+            text-align: center;
+            font-family: Manrope;
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.66;
+            padding: 15px 35px;
+            border-radius: 60px;
+            cursor: pointer;
         }
     }
+
+    // .stories {
+    //     .stories-inner {
+    //         margin-top: 150px;
+
+    //         .stories-title {
+    //             width: 570px;
+    //             color: #191B1D;
+    //             font-size: 5.2rem;
+    //             font-weight: 700;
+    //             line-height: 1.07;
+    //         }
+
+    //         .stories-list {
+    //             margin-top: 33px;
+    //         }
+
+    //         .view-stories {
+    //             display: block;
+    //             margin: 55px auto 0;
+    //             color:#FFF;
+    //             text-align: center;
+    //             font-family: Manrope;
+    //             font-size: 1.8rem;
+    //             font-weight: 600;
+    //             line-height: 1.66;
+    //             padding: 15px 35px;
+    //             border-radius: 60px;
+    //             cursor: pointer;
+    //         }
+    //     }
+    // }
 }
