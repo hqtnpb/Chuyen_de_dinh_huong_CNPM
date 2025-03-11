@@ -70,5 +70,11 @@ const image = {
     story_explore_01: require("~/assets/image/story_explore_01.png"),
     story_explore_02: require("~/assets/image/story_explore_02.png"),
     story_explore_03: require("~/assets/image/story_explore_03.png"),
+    icon_trip_01:require("~/assets/image/icon_trip_01.svg").default,
+    icon_trip_02:require("~/assets/image/icon_trip_02.svg").default,
+    icon_trip_03:require("~/assets/image/icon_trip_03.svg").default,
+    icon_trip_04:require("~/assets/image/icon_trip_04.svg").default,
+    icon_trip_05:require("~/assets/image/icon_trip_05.svg").default,
+    icon_trip_06:require("~/assets/image/icon_trip_06.svg").default,
 };  
 export default image;

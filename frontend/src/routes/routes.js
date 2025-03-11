@@ -11,7 +11,7 @@ import Popup from "~/components/PopUp";
 import About from "~/pages/About";
 import MoreInPlace from "~/pages/MoreInPlace";
 import SpotDetails from "~/pages/SpotDetails";
-import SearchResult from "~/pages/SearchResults";
+import SearchResult from "~/pages/SearchResults/SearchResult";
 
 
 //public routes

@@ -243,6 +243,8 @@
 
         .location {
             position: absolute;
+            display: flex;
+            text-align: center;
             top: 0;
             right: 0;
             margin: 18px;
@@ -256,6 +258,7 @@
             }
 
             .location-name {
+                margin-left: 4px;
                 color: #191B1D;
                 font-size: 1.4rem;
                 font-weight: 600;
