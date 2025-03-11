@@ -13,6 +13,7 @@ import MoreInPlace from "~/pages/MoreInPlace";
 import SpotDetails from "~/pages/SpotDetails";
 import SearchResult from "~/pages/SearchResults/SearchResult";
 
+import Contact from "~/pages/Contact/Contact";
 
 //public routes
 const publicRoutes = [
@@ -27,6 +28,7 @@ const publicRoutes = [
     { path: "/about", component: About },
     { path: "/spotdetails", component: SpotDetails },
     { path: "/searchresult", component: SearchResult},
+    { path: "/contact", component: Contact },
 ];
 
 //private routes

@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
+
 import styles from "./SignUp.module.scss";
 import image from "~/assets/image";
 import classNames from "classnames/bind";
@@ -11,11 +12,14 @@ import { storeInSession } from "~/common/session";
 const cx = classNames.bind(styles);
 function SignUp() {
     const authForm = useRef();
+    const navigate = useNavigate();
     const userAuthThroughServer = (serverRoute, formData) => {
         axios
             .post(process.env.REACT_APP_SERVER_DOMAIN + serverRoute, formData)
             .then(({ data }) => {
                 storeInSession("user", JSON.stringify(data));
+                toast.success("Sign up successful! Redirecting...");
+                setTimeout(() => navigate("/signin"), 2000); // Điều hướng sau 2 giây
             })
             .catch(({ response }) => {
                 toast.error(response.data.error);
