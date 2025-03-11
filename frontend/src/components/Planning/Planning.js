@@ -22,7 +22,7 @@ function Planning ({
                 {title && <h2 className={cx("title")}>{title}</h2>}
                 <div className={cx("text")}>
                     {desc && <p className={cx("desc")}>{desc}</p>}
-                    <Button text className={cx("btn")}></Button>
+                    <Button text className={cx("btn")}>Learn More</Button>
                 </div>
                 <img src={image} className={cx("img")}/>
             </div>

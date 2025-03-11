@@ -53,7 +53,6 @@ function HeroSection({
     const classes = cx("hero", {
         destination,
         spotdetails,
-        searchresult,
         more,
         [className]: className,
     });

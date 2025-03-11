@@ -64,5 +64,11 @@ const image = {
     popular_sydney_03: require("~/assets/image/popular_sydney_03.png"),
     search_result_img: require("~/assets/image/search_result_img.png"),
     kangooroo: require("~/assets/image/kangooroo.png"),
-};
+    explore_search_result_01: require("~/assets/image/explore_search_result_01.png"),
+    explore_search_result_02: require("~/assets/image/explore_search_result_02.png"),
+    explore_search_result_03: require("~/assets/image/explore_search_result_03.png"),
+    story_explore_01: require("~/assets/image/story_explore_01.png"),
+    story_explore_02: require("~/assets/image/story_explore_02.png"),
+    story_explore_03: require("~/assets/image/story_explore_03.png"),
+};  
 export default image;
