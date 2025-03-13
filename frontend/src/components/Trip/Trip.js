@@ -8,25 +8,29 @@ function Trip({
     desc,
     arrow,
     toolkit,
+    mission,
     className,
     children,
     ...props
 }) {
-    const classes = cx("card-trip",{
+    const classes = cx("card-trip", {
         toolkit,
+        mission,
         [className]: className,
     });
-    return ( 
+    return (
         <section className={classes} {...props}>
-            <div className={cx("content")}>
-                <img className={cx("icon")} src={icon} alt="Icon" />
-                {title && <h2 className={cx("title")}>{title}</h2>}
-                {desc && <p className={cx("desc")}>{desc}</p>}
-                <img src={arrow} className={cx("arrow")} alt="Arrow"/>
-                {children}
+            <div className={cx("card")}>
+                <div className={cx("content")}>
+                    <img className={cx("icon")} src={icon} alt="Icon" />
+                    {title && <h2 className={cx("title")}>{title}</h2>}
+                    {desc && <p className={cx("desc")}>{desc}</p>}
+                    <img src={arrow} className={cx("arrow")} alt="Arrow" />
+                    {children}
+                </div>
             </div>
         </section>
-     );
+    );
 }
 
 export default Trip;

@@ -105,6 +105,8 @@
 
     .explore {
         .explore-inner {
+            margin-bottom: 150px;
+
             .explore-text {
                 display: flex;
                 justify-content: space-between;
@@ -133,6 +135,7 @@
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
                 column-gap: 30px;
+                
             }
         }
 
@@ -149,6 +152,7 @@
             border-radius: 60px;
             cursor: pointer;
         }
+
         .stories-title {
             margin-top: 150px;
             width: 570px;
@@ -165,7 +169,7 @@
         .view-stories {
             display: block;
             margin: 55px auto 0;
-            color:#FFF;
+            color: #FFF;
             text-align: center;
             font-family: Manrope;
             font-size: 1.8rem;
@@ -177,35 +181,91 @@
         }
     }
 
-    // .stories {
-    //     .stories-inner {
-    //         margin-top: 150px;
+    .trip {
+        background: #FFF9E5;
 
-    //         .stories-title {
-    //             width: 570px;
-    //             color: #191B1D;
-    //             font-size: 5.2rem;
-    //             font-weight: 700;
-    //             line-height: 1.07;
-    //         }
+        .trip-inner {
 
-    //         .stories-list {
-    //             margin-top: 33px;
-    //         }
+            .trip-content {
+                .trip-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding-top: 100px;
 
-    //         .view-stories {
-    //             display: block;
-    //             margin: 55px auto 0;
-    //             color:#FFF;
-    //             text-align: center;
-    //             font-family: Manrope;
-    //             font-size: 1.8rem;
-    //             font-weight: 600;
-    //             line-height: 1.66;
-    //             padding: 15px 35px;
-    //             border-radius: 60px;
-    //             cursor: pointer;
-    //         }
-    //     }
-    // }
+                    .trip-title {
+                        width: 543px;
+                        color: #191B1D;
+                        font-size: 5.2rem;
+                        font-weight: 700;
+                        line-height: 1.07;
+                    }
+
+                    .trip-desc {
+                        margin-top: 18px;
+                        width: 570px;
+                        color: #4E5358;
+                        font-size: 1.8rem;
+                        font-weight: 400;
+                        line-height: 1.66;
+                    }
+
+                }
+
+                .trip-list {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    column-gap: 30px;
+                    row-gap: 30px;
+                    text-align: center;
+                    margin-top: 70px;
+                    padding-bottom: 100px;
+                }
+            }
+
+        }
+    }
+
+    .highlight {
+        .highlight-inner {
+            .highlight-content {
+                margin-top: 150px;
+
+                .highlight-title {
+                    color: #191B1D;
+                    font-size: 5.2rem;
+                    font-weight: 700;
+                    line-height: 1.07;
+                }
+
+                .highlight-list {
+                    margin-top: 70px;
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    row-gap: 30px;
+                    column-gap: 30px;
+                }
+
+                .btn-viewer {
+                    display: block;
+                    margin: 59px auto 0;
+                    color: #FFF;
+                    text-align: center;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    line-height: 1.66;
+                    text-transform: capitalize;
+                    padding: 15px 35px;
+                    border-radius: 60px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }
+
+.option-list:hover {
+    color: #FF5B26;
+}
+

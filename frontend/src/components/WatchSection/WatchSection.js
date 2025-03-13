@@ -39,6 +39,7 @@ const data = [
         videoTitle: "City lights and urban wonders",
         videoDesc: "The best city experience",
     },
+
 ];
 
 function WatchSection() {
