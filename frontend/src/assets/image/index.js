@@ -95,5 +95,10 @@ const image = {
     more_img_15: require("~/assets/image/more_img_15.png"),
     more_img_16: require("~/assets/image/more_img_16.png"),
 
+    icon_upload:require("~/assets/image/icon_upload.svg").default,
+    upload_img_1: require("~/assets/image/upload_1.png"),
+    upload_img_2: require("~/assets/image/upload_2.png"),
+    upload_img_3: require("~/assets/image/upload_3.png"),
+
 };
 export default image;

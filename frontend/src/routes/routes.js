@@ -14,6 +14,7 @@ import SpotDetails from "~/pages/SpotDetails";
 import SearchResult from "~/pages/SearchResults/SearchResult";
 
 import Contact from "~/pages/Contact/Contact";
+import Suggestions from "~/pages/Suggestions";
 
 //public routes
 const publicRoutes = [
@@ -29,6 +30,7 @@ const publicRoutes = [
     { path: "/spotdetails", component: SpotDetails },
     { path: "/searchresult", component: SearchResult},
     { path: "/contact", component: Contact },
+    { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
 ];
 
 //private routes
