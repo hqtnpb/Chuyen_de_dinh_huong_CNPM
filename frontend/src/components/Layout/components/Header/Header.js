@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 import { UserContext } from "~/App";
@@ -67,6 +68,13 @@ function Header() {
 
                     {accessToken ? (
                         <div className={cx("user")}>
+                            <Link to="/editor">
+                                <div className={cx("write")}>
+                                    <FontAwesomeIcon icon={faPenToSquare} />
+                                    <p>Write</p>
+                                </div>
+                            </Link>
+
                             <Link to="/dashboard/notification">
                                 <button className={cx("btn")}>
                                     <FontAwesomeIcon icon={faBell} size="lg" />

@@ -1,0 +1,27 @@
+.tags {
+    margin-left: 10px;
+    position: relative;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #fff;
+    padding: 8px 8px 8px 25px;
+    border-radius: 30px;
+}
+.tag {
+    outline: none;
+}
+.btn {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: #ff5b26;
+    border-radius: 50%;
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}

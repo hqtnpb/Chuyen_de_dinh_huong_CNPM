@@ -43,21 +43,25 @@ const image = {
     destination_bg: require("~/assets/image/destination_bg.png"),
     destination_hero_img: require("~/assets/image/destination_hero_img.png"),
     iconclose: require("~/assets/image/iconclose.svg").default,
-    about_icon_background: require("~/assets/image/about_icon_background.svg").default,
-    about_icon_feature: require("~/assets/image/about_icon_feature.svg").default,
+    about_icon_background: require("~/assets/image/about_icon_background.svg")
+        .default,
+    about_icon_feature: require("~/assets/image/about_icon_feature.svg")
+        .default,
     member_01_about: require("~/assets/image/member_01_about.png"),
     member_02_about: require("~/assets/image/member_02_about.png"),
     member_03_about: require("~/assets/image/member_03_about.png"),
     media_diversity: require("~/assets/image/media_diversity.png"),
     icon_diversity: require("~/assets/image/icon_diversity.svg").default,
     icon_arrow_about: require("~/assets/image/icon_arrow_about.svg").default,
-    icon_guidance_about: require("~/assets/image/icon_guidance_about.svg").default,
+    icon_guidance_about: require("~/assets/image/icon_guidance_about.svg")
+        .default,
     icon_value_about: require("~/assets/image/icon_value_about.svg").default,
     icon_peace_about: require("~/assets/image/icon_peace_about.svg").default,
     icon_X_popup: require("~/assets/image/icon_X_popup.svg").default,
-    error_image: require( "~/assets/image/error_image.png"),
+    error_image: require("~/assets/image/error_image.png"),
     spotdetails_img: require("~/assets/image/spotdetails_img.png"),
-    spotdetails_background: require("~/assets/image/spotdetails_backgound.svg").default,
+    spotdetails_background: require("~/assets/image/spotdetails_backgound.svg")
+        .default,
     icon_spotdetails: require("~/assets/image/icon_spotdetails.svg").default,
     popular_sydney_01: require("~/assets/image/popular_sydney_01.png"),
     popular_sydney_02: require("~/assets/image/popular_sydney_02.png"),
@@ -70,12 +74,12 @@ const image = {
     story_explore_01: require("~/assets/image/story_explore_01.png"),
     story_explore_02: require("~/assets/image/story_explore_02.png"),
     story_explore_03: require("~/assets/image/story_explore_03.png"),
-    icon_trip_01:require("~/assets/image/icon_trip_01.svg").default,
-    icon_trip_02:require("~/assets/image/icon_trip_02.svg").default,
-    icon_trip_03:require("~/assets/image/icon_trip_03.svg").default,
-    icon_trip_04:require("~/assets/image/icon_trip_04.svg").default,
-    icon_trip_05:require("~/assets/image/icon_trip_05.svg").default,
-    icon_trip_06:require("~/assets/image/icon_trip_06.svg").default,
+    icon_trip_01: require("~/assets/image/icon_trip_01.svg").default,
+    icon_trip_02: require("~/assets/image/icon_trip_02.svg").default,
+    icon_trip_03: require("~/assets/image/icon_trip_03.svg").default,
+    icon_trip_04: require("~/assets/image/icon_trip_04.svg").default,
+    icon_trip_05: require("~/assets/image/icon_trip_05.svg").default,
+    icon_trip_06: require("~/assets/image/icon_trip_06.svg").default,
 
     contact_img: require("~/assets/image/contact_img_01.png"),
     more_img_01: require("~/assets/image/more_img_01.png"),
@@ -94,6 +98,6 @@ const image = {
     more_img_14: require("~/assets/image/more_img_14.png"),
     more_img_15: require("~/assets/image/more_img_15.png"),
     more_img_16: require("~/assets/image/more_img_16.png"),
-
+    blog_banner: require("~/assets/image/blog banner.png"),
 };
 export default image;

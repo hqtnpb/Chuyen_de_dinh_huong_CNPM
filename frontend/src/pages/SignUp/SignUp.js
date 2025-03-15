@@ -28,7 +28,7 @@ function SignUp() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let serverRoute = "/signup";
+        let serverRoute = "/auth/signup";
 
         //regex
         let emailRegex =

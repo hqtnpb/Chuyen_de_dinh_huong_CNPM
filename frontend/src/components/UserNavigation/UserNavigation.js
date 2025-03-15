@@ -21,9 +21,6 @@ function UserNavigation() {
         <div className={cx("user-navigation")}>
             <ul className={cx("nav-list")}>
                 <li className={cx("nav-item")}>
-                    <Link to="/editor">Write</Link>
-                </li>
-                <li className={cx("nav-item")}>
                     <Link to={`/user/${username}`}>Profile</Link>
                 </li>
                 <li className={cx("nav-item")}>
