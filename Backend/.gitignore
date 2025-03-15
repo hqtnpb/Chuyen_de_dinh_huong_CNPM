@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.env
+Backend/.env
 blog-website-e0d5a-firebase-adminsdk-fbsvc-d2d431c9f0.json
 regex.txt
 # testing
