@@ -14,6 +14,7 @@ import SpotDetails from "~/pages/SpotDetails";
 import SearchResult from "~/pages/SearchResults/SearchResult";
 
 import Contact from "~/pages/Contact/Contact";
+import EditorPage from "~/pages/EditorPage";
 
 //public routes
 const publicRoutes = [
@@ -27,8 +28,9 @@ const publicRoutes = [
     { path: "/popup", component: Popup },
     { path: "/about", component: About },
     { path: "/spotdetails", component: SpotDetails },
-    { path: "/searchresult", component: SearchResult},
+    { path: "/searchresult", component: SearchResult },
     { path: "/contact", component: Contact },
+    { path: "/editor", component: EditorPage, layout: null },
 ];
 
 //private routes
