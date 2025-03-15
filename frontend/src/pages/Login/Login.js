@@ -35,7 +35,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let serverRoute = "/signin";
+        let serverRoute = "/auth/signin";
 
         //regex
         let emailRegex =
@@ -72,12 +72,12 @@ function Login() {
         e.preventDefault();
         authWithGoogle()
             .then((user) => {
-                let serverRoute = "/google-auth";
+                let serverRoute = "/auth/google-auth";
 
                 let formData = {
                     accessToken: user.accessToken,
                 };
-                
+
                 userAuthThroughServer(serverRoute, formData);
             })
             .catch((error) => {
