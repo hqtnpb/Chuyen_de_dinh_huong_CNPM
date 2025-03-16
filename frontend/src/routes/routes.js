@@ -15,6 +15,7 @@ import SearchResult from "~/pages/SearchResults/SearchResult";
 
 import Contact from "~/pages/Contact/Contact";
 import EditorPage from "~/pages/EditorPage";
+import Suggestions from "~/pages/Suggestions";
 
 //public routes
 const publicRoutes = [
@@ -23,7 +24,7 @@ const publicRoutes = [
     { path: "/upload", component: Upload, layout: HeaderOnly },
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
-    { path: "/error", component: Error },
+    { path: "/error", component: Error, layout: null },
     { path: "/more", component: MoreInPlace },
     { path: "/popup", component: Popup },
     { path: "/about", component: About },
@@ -31,6 +32,7 @@ const publicRoutes = [
     { path: "/searchresult", component: SearchResult },
     { path: "/contact", component: Contact },
     { path: "/editor", component: EditorPage, layout: null },
+    { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
 ];
 
 //private routes
