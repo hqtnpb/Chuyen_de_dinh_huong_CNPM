@@ -16,6 +16,7 @@ import SearchResult from "~/pages/SearchResults/SearchResult";
 import Contact from "~/pages/Contact/Contact";
 import EditorPage from "~/pages/EditorPage";
 import Suggestions from "~/pages/Suggestions";
+import Commingsoon from "~/pages/Commingsoon";
 
 //public routes
 const publicRoutes = [
@@ -33,6 +34,7 @@ const publicRoutes = [
     { path: "/contact", component: Contact },
     { path: "/editor", component: EditorPage, layout: null },
     { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
+    { path: "/commingsoon", component: Commingsoon, layout: HeaderOnly },
 ];
 
 //private routes
