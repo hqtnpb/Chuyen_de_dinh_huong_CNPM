@@ -109,6 +109,7 @@
             .explore-text {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 margin-top: 150px;
 
                 .explore-title {
@@ -120,6 +121,7 @@
 
                 .option-list {
                     width: 191px;
+                    height: 40px;
                     border-radius: 30px;
                     border: 1px solid #191B1D;
                     background: #FFF;
