@@ -1,0 +1,10 @@
+.user {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    .profile-img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+}
