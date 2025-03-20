@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
 const uploadRoute = require("./routes/upload");
 const createBlogRoute = require("./routes/createBlog");
+const renderBlogsRoute = require("./routes/renderBlogs");
 const jwt = require("jsonwebtoken");
 
 dotenv.config();
@@ -52,7 +53,8 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoute);
 app.use("/api/upload", uploadRoute);
-app.use("/api/blog", verifyJWT, createBlogRoute);
+app.use("/api/create", verifyJWT, createBlogRoute);
+app.use("/api/render", renderBlogsRoute);
 
 app.listen(8000, () => {
     console.log("Server is running on port 8000");

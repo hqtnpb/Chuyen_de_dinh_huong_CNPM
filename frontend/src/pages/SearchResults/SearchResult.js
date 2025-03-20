@@ -6,12 +6,13 @@ import Card from "~/components/Card";
 import Planning from "~/components/Planning";
 import Trip from "~/components/Trip";
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 const cardData = [
     {
         imgSrc: image.explore_search_result_01,
         title: "Bondi Beach",
-        category: "Definitively Sydney, Bondi is one of the world’s great beaches. It’s the closest ocean...",
+        category:
+            "Definitively Sydney, Bondi is one of the world’s great beaches. It’s the closest ocean...",
         rating: 4.5,
         location: "Sydney",
     },
@@ -19,7 +20,8 @@ const cardData = [
     {
         imgSrc: image.explore_search_result_02,
         title: "Sydney Harbour Bridge",
-        category: "Sydneysiders love their giant 'coathanger', which opened in 1932. The best way to...",
+        category:
+            "Sydneysiders love their giant 'coathanger', which opened in 1932. The best way to...",
         rating: 4.8,
         location: "Sydney",
     },
@@ -27,11 +29,12 @@ const cardData = [
     {
         imgSrc: image.explore_search_result_03,
         title: "Watsons Bay",
-        category: "Lovely Watsons Bay, east of the city center and north of Bondi, was once a small...",
+        category:
+            "Lovely Watsons Bay, east of the city center and north of Bondi, was once a small...",
         rating: 4.9,
         location: "Sydney",
-    }
-]
+    },
+];
 
 const cardStory = [
     {
@@ -50,52 +53,52 @@ const cardStory = [
         title: "Check out Meissa Mason's best day in Sydney, Australia",
         desc: "Sydney is much more than its beaches and landmarks. Meissa Mason shows you her idea of the perfect day in her hometown...",
         image: image.story_explore_03,
-    }
-]
+    },
+];
 
-const cardTrip =[
+const cardTrip = [
     {
         icon: image.icon_trip_01,
-        title:"Best Things to Do",
-        desc:"Discover some of the most unique and fulfilling experiences your next destination has to offer. Providing the best.",
+        title: "Best Things to Do",
+        desc: "Discover some of the most unique and fulfilling experiences your next destination has to offer. Providing the best.",
         arrow: image.icon_arrow_about,
     },
 
     {
         icon: image.icon_trip_02,
-        title:"When to Visit",
-        desc:"Tips & Travel trends to help you pick the perfect time to visit this destination. Providing the best tips for you.",
+        title: "When to Visit",
+        desc: "Tips & Travel trends to help you pick the perfect time to visit this destination. Providing the best tips for you.",
         arrow: image.icon_arrow_about,
     },
 
     {
         icon: image.icon_trip_03,
-        title:"Things to Know",
-        desc:"Golden rules to keep in mind when traveling to this destination. Providing the best tips & tricks for you.",
+        title: "Things to Know",
+        desc: "Golden rules to keep in mind when traveling to this destination. Providing the best tips & tricks for you.",
         arrow: image.icon_arrow_about,
     },
 
     {
         icon: image.icon_trip_04,
-        title:"Neighborhoods to Explore",
-        desc:"Add visiting these must-see local hot spots and culture centers to your next travel itinerary. Providing the best tips.",
+        title: "Neighborhoods to Explore",
+        desc: "Add visiting these must-see local hot spots and culture centers to your next travel itinerary. Providing the best tips.",
         arrow: image.icon_arrow_about,
     },
 
     {
         icon: image.icon_trip_05,
-        title:"Quick Trips",
-        desc:"Plan a day trip full of local flavor and get back in time with these same-day options. Providing the best tips & tricks for you.",
+        title: "Quick Trips",
+        desc: "Plan a day trip full of local flavor and get back in time with these same-day options. Providing the best tips & tricks for you.",
         arrow: image.icon_arrow_about,
     },
 
     {
         icon: image.icon_trip_06,
-        title:"Budget Friendly",
-        desc:"Deals and tips on ways to save without sacrificing the fun on your next trip. Providing the best tips & tricks for you.",
+        title: "Budget Friendly",
+        desc: "Deals and tips on ways to save without sacrificing the fun on your next trip. Providing the best tips & tricks for you.",
         arrow: image.icon_arrow_about,
     },
-]
+];
 function SearchResult() {
     return (
         <div className={cx("search-result")}>
@@ -103,25 +106,58 @@ function SearchResult() {
                 <div className={cx("container")}>
                     <div className={cx("inner")}>
                         <div className={cx("introduce")}>
-                            <img className={cx("background")} src={image.hero_decor_image} alt="Path Way" />
+                            <img
+                                className={cx("background")}
+                                src={image.hero_decor_image}
+                                alt="Path Way"
+                            />
                             <div className={cx("content")}>
-                                <h1 className={cx("title")}>Sydney, Australia</h1>
-                                <p className={cx("desc")}>Sydney, spectacularly draped around its glorious harbor and beaches, has visual wow factor like few other cities. Scratch the surface and it only gets better.</p>
-                                <Button text className={cx("btn")}>Read More</Button>
+                                <h1 className={cx("title")}>
+                                    Sydney, Australia
+                                </h1>
+                                <p className={cx("desc")}>
+                                    Sydney, spectacularly draped around its
+                                    glorious harbor and beaches, has visual wow
+                                    factor like few other cities. Scratch the
+                                    surface and it only gets better.
+                                </p>
+                                <Button text className={cx("btn")}>
+                                    Read More
+                                </Button>
                                 <p className={cx("jump")}>Jump to:</p>
                                 <ul className={cx("list")}>
-                                    <li className={cx("item")}>Must see experiences</li>
-                                    <li className={cx("item")}>Featured & Latest stories</li>
-                                    <li className={cx("item")}>Planning a trip</li>
+                                    <li className={cx("item")}>
+                                        Must see experiences
+                                    </li>
+                                    <li className={cx("item")}>
+                                        Featured & Latest stories
+                                    </li>
+                                    <li className={cx("item")}>
+                                        Planning a trip
+                                    </li>
                                 </ul>
                             </div>
                             <div className={cx("media")}>
-                                <img className={cx("kangooroo")} src={image.kangooroo} alt="Kangooroo" />
+                                <img
+                                    className={cx("kangooroo")}
+                                    src={image.kangooroo}
+                                    alt="Kangooroo"
+                                />
 
-                                <img className={cx("img")} src={image.search_result_img} alt="Sydney" />
+                                <img
+                                    className={cx("img")}
+                                    src={image.search_result_img}
+                                    alt="Sydney"
+                                />
                                 <div className={cx("location")}>
-                                    <img className={cx("icon")} src={image.location_icon} alt="Icon" />
-                                    <p className={cx("location-name")}>Sydney</p>
+                                    <img
+                                        className={cx("icon")}
+                                        src={image.location_icon}
+                                        alt="Icon"
+                                    />
+                                    <p className={cx("location-name")}>
+                                        Sydney
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -132,12 +168,22 @@ function SearchResult() {
                 <div className={cx("container")}>
                     <div className={cx("explore-inner")}>
                         <div className={cx("explore-text")}>
-                            <h2 className={cx("explore-title")}>Explore Sydney</h2>
+                            <h2 className={cx("explore-title")}>
+                                Explore Sydney
+                            </h2>
                             <select className={cx("option-list")}>
-                                <option className={cx("option")}>Top Attractions</option>
-                                <option className={cx("option")}>Top Restaurants</option>
-                                <option className={cx("option")}>Top Entertainment</option>
-                                <option className={cx("option")}>Top Shopping</option>
+                                <option className={cx("option")}>
+                                    Top Attractions
+                                </option>
+                                <option className={cx("option")}>
+                                    Top Restaurants
+                                </option>
+                                <option className={cx("option")}>
+                                    Top Entertainment
+                                </option>
+                                <option className={cx("option")}>
+                                    Top Shopping
+                                </option>
                             </select>
                         </div>
                         <div className={cx("card-list")}>
@@ -150,14 +196,16 @@ function SearchResult() {
                                     rating={data.rating}
                                     location={data.location}
                                     searchresult
-                                >
-
-                                </Card>
+                                ></Card>
                             ))}
                         </div>
-                        <Button active className={cx("btn")}>More in Sydney</Button>
+                        <Button active className={cx("btn")}>
+                            More in Sydney
+                        </Button>
 
-                        <h2 className={cx("stories-title")}>Latest Stories from Sydney</h2>
+                        <h2 className={cx("stories-title")}>
+                            Latest Stories from Sydney
+                        </h2>
                         <div className={cx("stories-list")}>
                             {cardStory.map((data, index) => (
                                 <Planning
@@ -165,10 +213,13 @@ function SearchResult() {
                                     title={data.title}
                                     desc={data.desc}
                                     image={data.image}
-                                    planning></Planning>
+                                    planning
+                                ></Planning>
                             ))}
                         </div>
-                        <Button active className={cx("view-stories")}>View All Stories</Button>
+                        <Button active className={cx("view-stories")}>
+                            View All Stories
+                        </Button>
                     </div>
                 </div>
             </div>
@@ -194,17 +245,24 @@ function SearchResult() {
                 <div className={cx("container")}>
                     <div className={cx("trip-inner")}>
                         <div className={cx("trip-content")}>
-                            <h2 className={cx("trip-title")}>Planning Toolkit</h2>
-                            <p className={cx("trip-desc")}>Imagine checking one place for your travel details and getting a heads up as things happen throughout your trip</p>
+                            <h2 className={cx("trip-title")}>
+                                Planning Toolkit
+                            </h2>
+                            <p className={cx("trip-desc")}>
+                                Imagine checking one place for your travel
+                                details and getting a heads up as things happen
+                                throughout your trip
+                            </p>
                         </div>
                         <div className={cx("trip-list")}>
-                            {cardTrip.map((data, index) =>(
+                            {cardTrip.map((data, index) => (
                                 <Trip
-                                key={index}
-                                icon={data.icon}
-                                title={data.title}
-                                desc={data.desc}
-                                arrow={data.arrow}></Trip>
+                                    key={index}
+                                    icon={data.icon}
+                                    title={data.title}
+                                    desc={data.desc}
+                                    arrow={data.arrow}
+                                ></Trip>
                             ))}
                         </div>
                     </div>
