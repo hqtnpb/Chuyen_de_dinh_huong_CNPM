@@ -14,6 +14,8 @@ import SearchResult from "~/pages/SearchResults/SearchResult";
 
 import Contact from "~/pages/Contact/Contact";
 import EditorPage from "~/pages/EditorPage";
+import Suggestions from "~/pages/Suggestions";
+import Commingsoon from "~/pages/Commingsoon";
 import Blog from "~/pages/Blog";
 import SearchPage from "~/pages/SearchPage";
 
@@ -31,6 +33,8 @@ const publicRoutes = [
     { path: "/searchresult", component: SearchResult },
     { path: "/contact", component: Contact },
     { path: "/editor", component: EditorPage, layout: null },
+    { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
+    { path: "/commingsoon", component: Commingsoon, layout: HeaderOnly },
     { path: "/blog", component: Blog },
     { path: "/search/:query", component: SearchPage },
 

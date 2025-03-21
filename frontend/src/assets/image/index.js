@@ -99,8 +99,15 @@ const image = {
     more_img_15: require("~/assets/image/more_img_15.png"),
     more_img_16: require("~/assets/image/more_img_16.png"),
     blog_banner: require("~/assets/image/blog banner.png"),
-    Hlight_01: require("~/assets/image/2light_01.png"),
-    Hlight_02: require("~/assets/image/2light_02.png"),
-    Hlight_03: require("~/assets/image/2light_03.png"),
+
+    icon_upload: require("~/assets/image/icon_upload.svg").default,
+    upload_img_1: require("~/assets/image/upload_1.png"),
+    upload_img_2: require("~/assets/image/upload_2.png"),
+    upload_img_3: require("~/assets/image/upload_3.png"),
+    
+    commingsoon_image_1: require("~/assets/image/cs_image_1.png"),
+    commingsoon_image_2: require("~/assets/image/cs_image_2.png"),
+    commingsoon_image_3: require("~/assets/image/cs_image_3.png"),
+    
 };
 export default image;
