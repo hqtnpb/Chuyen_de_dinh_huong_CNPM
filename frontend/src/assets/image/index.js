@@ -105,5 +105,8 @@ const image = {
     upload_img_2: require("~/assets/image/upload_2.png"),
     upload_img_3: require("~/assets/image/upload_3.png"),
     
+    Hlight_01: require("~/assets/image/2light_01.png"),
+    Hlight_02: require("~/assets/image/2light_02.png"),
+    Hlight_03: require("~/assets/image/2light_03.png"),
 };
 export default image;

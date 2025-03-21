@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform ease 0.3s;
+    &:hover{
+        transform: scale(1.1);
+    }
     .title {
         width: 370px;
         color: #191B1D;
@@ -20,6 +24,7 @@
 
         .btn {
             margin-top: 12px;
+            cursor: pointer;
         }
     }
     .img{
@@ -27,4 +32,8 @@
         border-radius: 12px;
         margin-top: 37px;
     }
+}
+
+.btn:hover{
+    color:#FF5B26 ;
 }

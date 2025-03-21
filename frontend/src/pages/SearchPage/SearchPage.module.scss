@@ -1,0 +1,15 @@
+.search-page {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 100px;
+    gap: 30px;
+    .blog-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .user-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
