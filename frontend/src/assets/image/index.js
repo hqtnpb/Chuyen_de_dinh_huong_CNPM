@@ -99,5 +99,8 @@ const image = {
     more_img_15: require("~/assets/image/more_img_15.png"),
     more_img_16: require("~/assets/image/more_img_16.png"),
     blog_banner: require("~/assets/image/blog banner.png"),
+    Hlight_01: require("~/assets/image/2light_01.png"),
+    Hlight_02: require("~/assets/image/2light_02.png"),
+    Hlight_03: require("~/assets/image/2light_03.png"),
 };
 export default image;

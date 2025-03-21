@@ -5,6 +5,8 @@ import Button from "~/components/Button";
 import Card from "~/components/Card";
 import Planning from "~/components/Planning";
 import Trip from "~/components/Trip";
+import WatchSection from "~/components/WatchSection";
+import video from "~/assets/video";
 
 const cx = classNames.bind(styles);
 const cardData = [
@@ -98,7 +100,35 @@ const cardTrip = [
         desc: "Deals and tips on ways to save without sacrificing the fun on your next trip. Providing the best tips & tricks for you.",
         arrow: image.icon_arrow_about,
     },
-];
+]
+const card2Light =[
+    {
+        imgSrc: image.Hlight_01,
+        title:"The Rocks",
+        category: "Must See",
+        rating: 4.5,
+        location: "$200",
+        desc: "(3.9K Reviews)",
+    },
+
+    {
+        imgSrc: image.Hlight_02,
+        title:"The Rocks",
+        category: "Must See",
+        rating: 4.5,
+        location: "$200",
+        desc: "(3.9K Reviews)",
+    },
+
+    {
+        imgSrc: image.Hlight_03,
+        title:"The Rocks",
+        category: "Must See",
+        rating: 4.5,
+        location: "$200",
+        desc: "(3.9K Reviews)",
+    }
+]
 function SearchResult() {
     return (
         <div className={cx("search-result")}>
@@ -164,6 +194,7 @@ function SearchResult() {
                     </div>
                 </div>
             </div>
+
             <div className={cx("explore")}>
                 <div className={cx("container")}>
                     <div className={cx("explore-inner")}>
@@ -223,50 +254,65 @@ function SearchResult() {
                     </div>
                 </div>
             </div>
-            {/* <div className={cx("stories")}>
-                <div className={cx("container")}>
-                    <div className={cx("stories-inner")}>
-                        <h2 className={cx("stories-title")}>Latest Stories from Sydney</h2>
-                        <div className={cx("stories-list")}>
-                            {cardStory.map((data, index) =>(
-                                <Planning
-                                key={index}
-                                title={data.title}
-                                desc={data.desc}
-                                image={data.image}
-                                text></Planning>
-                            ))}
-                        </div>
-                        <Button active className={cx("view-stories")}>View All Stories</Button>
-                    </div>
-                </div>
-            </div> */}
+
             <div className={cx("trip")}>
                 <div className={cx("container")}>
                     <div className={cx("trip-inner")}>
                         <div className={cx("trip-content")}>
-                            <h2 className={cx("trip-title")}>
-                                Planning Toolkit
-                            </h2>
-                            <p className={cx("trip-desc")}>
-                                Imagine checking one place for your travel
-                                details and getting a heads up as things happen
-                                throughout your trip
-                            </p>
-                        </div>
-                        <div className={cx("trip-list")}>
-                            {cardTrip.map((data, index) => (
-                                <Trip
+                            <div className={cx("trip-text")}>
+                                <h2 className={cx("trip-title")}>Planning Toolkit</h2>
+                                <p className={cx("trip-desc")}>Imagine checking one place for your travel details and getting a heads up as things happen throughout your trip</p>
+                            </div>
+                            <div className={cx("trip-list")}>
+                                {cardTrip.map((data, index) =>(
+                                    <Trip
                                     key={index}
                                     icon={data.icon}
                                     title={data.title}
                                     desc={data.desc}
                                     arrow={data.arrow}
-                                ></Trip>
-                            ))}
+                                    toolkit>
+                                    </Trip>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className={cx("highlight")}>
+                <div className={cx("container")}>
+                    <div className={cx("highlight-inner")}>
+                        <div className={cx("highlight-content")}>
+                            <h2 className={cx("highlight-title")}>Highlights from your trip</h2>
+                            <div className={cx("highlight-list")}>
+                                {card2Light.map((data, index) =>(
+                                    <Card
+                                    key={index}
+                                    imgSrc={data.imgSrc}
+                                    title={data.title}
+                                    category={data.category}
+                                    rating={data.rating}
+                                    location={data.location}
+                                    desc={data.desc}
+                                    highlight>
+                                    </Card>
+                                ))}
+                            </div>
+                            <Button active className={cx("btn-viewer")}>View All Attractions</Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div className={cx("feature")}>
+                <WatchSection
+                title={"Featured videos from Sydney"}
+                videoSrc={video.video_pho}
+                videoTitle={"New South Wales, Australia: from Sydney to the Blue Mountains"}
+                videoDesc={
+                    "Watch the best of Sydney. In this video we presented all the beautiful things of Sydney and Australia"
+                }></WatchSection>
             </div>
         </div>
     );

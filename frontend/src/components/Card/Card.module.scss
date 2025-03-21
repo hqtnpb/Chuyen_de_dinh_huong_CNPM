@@ -233,6 +233,7 @@
 
 //SearchResult Card
 .searchresult {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     .card-img {
         position: relative;
 
@@ -286,11 +287,14 @@
 
         .rate {
             margin-top: 18px;
+            display: flex;
+            align-items: center;
             .star {
                 width: 20px;
             }
 
             .rating {
+                margin-left: 4px;
                 color: #191B1D;
                 font-size: 1.6rem;
                 font-weight: 600;
@@ -298,4 +302,116 @@
             }
         }
     }
+}
+
+//Highlight card
+.highlight {
+    overflow: hidden;
+    border-radius: 12px;
+
+    .card-img {
+        .image {
+            width: 370px;
+            border-radius: 12px;
+        }
+
+        .location {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 18px;
+            padding: 4px 12px 4px 0;
+            border-radius: 6px;
+            background: #fff;
+            .icon {
+                opacity: 0;
+            }
+    
+            .location-name {
+                color: #FF5B26;
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 1.71;
+            }
+        }
+    }
+    .content{
+        .category {
+            margin-top: 16px;
+            color: #4E5358;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.75;  
+        }
+        .title{
+            margin-top: 4px;
+            color: #191B1D;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.27; 
+        }
+        .desc{
+            position: absolute;
+            margin-left: 125px;
+            margin-top: 16px;
+        }
+        .rate{
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            padding: 4px 12px;
+            border-radius: 16px;
+            background: #FFF7DA;
+            width: 117px;
+
+            .star {
+                width: 14px;
+            }
+
+            .rating {
+                margin-left: 4px;
+                color: #191B1D;
+                font-size: 1.4rem;
+                font-weight: 600;
+                line-height: 1.71;
+            }
+        }
+    }
+}
+
+.searchresult:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.highlight:before,
+.highlight:after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background: #f09070;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.highlight:before{
+  opacity: .5;
+}
+
+.highlight:after{
+  transition-delay: .2s;
+}
+
+.highlight:hover{
+  color: #fff;
+  border-radius: 12px;
+}
+
+.highlight:hover:before,
+.highlight:hover:after{
+  top: 0;
 }
