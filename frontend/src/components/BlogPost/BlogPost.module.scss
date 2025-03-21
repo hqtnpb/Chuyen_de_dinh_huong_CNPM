@@ -1,0 +1,107 @@
+@keyframes colorChange {
+    0% {
+        color: red;
+    }
+    25% {
+        color: blue;
+    }
+    50% {
+        color: green;
+    }
+    75% {
+        color: orange;
+    }
+    100% {
+        color: red;
+    }
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 40px;
+    column-gap: 30px;
+    margin-bottom: 40px;
+    .title {
+        color: #191b1d;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.27;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .content {
+        margin-top: 10px;
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        .author-avt {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .author {
+            color: #191b1d;
+            font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1.67;
+        }
+        .time {
+            color: #4e5358;
+
+            font-family: Manrope;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.75;
+        }
+    }
+    .likes {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .desc {
+        .text {
+            color: #4e5358;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.75;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            overflow: hidden;
+        }
+        .more {
+            margin-top: 12px;
+            color: #191b1d;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.75;
+        }
+        .tags {
+            display: block;
+            margin-top: 20px;
+            font-size: 1.4rem;
+            animation: colorChange 2s infinite;
+        }
+    }
+    .banner {
+        width: 370px;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+    &:hover .more {
+        color: #ff5b26;
+    }
+}

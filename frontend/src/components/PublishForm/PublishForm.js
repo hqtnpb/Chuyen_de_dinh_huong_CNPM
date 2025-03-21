@@ -42,7 +42,6 @@ const PublishForm = () => {
 
     const handleBlogDescChange = (e) => {
         let input = e.target;
-        console.log(input.value);
 
         setBlog({ ...blog, desc: input.value });
     };
@@ -69,7 +68,6 @@ const PublishForm = () => {
 
             e.target.value = "";
         }
-        console.log(tags);
     };
 
     const publishBlog = (e) => {
@@ -103,7 +101,7 @@ const PublishForm = () => {
 
         axios
             .post(
-                process.env.REACT_APP_SERVER_DOMAIN + "/blog/create-blog",
+                process.env.REACT_APP_SERVER_DOMAIN + "/create/create-blog",
                 blogObj,
                 {
                     headers: {
