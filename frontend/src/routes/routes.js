@@ -14,13 +14,10 @@ import SearchResult from "~/pages/SearchResults/SearchResult";
 
 import Contact from "~/pages/Contact/Contact";
 import EditorPage from "~/pages/EditorPage";
-<<<<<<< HEAD
-=======
 import Suggestions from "~/pages/Suggestions";
 import Commingsoon from "~/pages/Commingsoon";
 import Blog from "~/pages/Blog";
 import SearchPage from "~/pages/SearchPage";
->>>>>>> 250a8371fbe5096104a82b1b6a5bfe333fa7e6a0
 
 //public routes
 const publicRoutes = [
@@ -28,7 +25,6 @@ const publicRoutes = [
     { path: "/destination", component: Destination },
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
-    { path: "/error", component: Error, layout: null },
     { path: "/more", component: MoreInPlace },
     { path: "/popup", component: Popup },
     { path: "/about", component: About },
@@ -36,18 +32,11 @@ const publicRoutes = [
     { path: "/searchresult", component: SearchResult },
     { path: "/contact", component: Contact },
     { path: "/editor", component: EditorPage, layout: null },
-<<<<<<< HEAD
-    { path: "/blog", component: Blog },
-    { path: "/search/:query", component: SearchPage },
-
-    { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
-=======
     { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
     { path: "/commingsoon", component: Commingsoon, layout: HeaderOnly },
     { path: "/blog", component: Blog },
     { path: "/search/:query", component: SearchPage },
-
->>>>>>> 250a8371fbe5096104a82b1b6a5bfe333fa7e6a0
+    { path: "*", component: Error, layout: null },
 ];
 
 //private routes
