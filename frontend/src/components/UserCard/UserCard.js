@@ -1,16 +1,19 @@
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 import styles from "./UserCard.module.scss";
 const cx = classNames.bind(styles);
 
 function UserCard({ user }) {
+    let {
+        personal_info: { username, profile_img },
+    } = user;
     return (
-        <div className={cx("user")}>
-            <img
-                src={user.personal_info.profile_img}
-                className={cx("profile-img")}
-            />
-            <p className={cx("name")}>@{user.personal_info.username}</p>
-        </div>
+        <Link to={`/user/${username}`}>
+            <div className={cx("user")}>
+                <img src={profile_img} className={cx("profile-img")} />
+                <p className={cx("name")}>@{username}</p>
+            </div>
+        </Link>
     );
 }
 

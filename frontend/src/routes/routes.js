@@ -18,13 +18,14 @@ import Suggestions from "~/pages/Suggestions";
 import Commingsoon from "~/pages/Commingsoon";
 import Blog from "~/pages/Blog";
 import SearchPage from "~/pages/SearchPage";
+import ProfilePage from "~/pages/ProfilePage/ProfilePage";
 
 //public routes
 const publicRoutes = [
     { path: "/", component: Home },
-    { path: "/destination", component: Destination },
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
+    { path: "/destination", component: Destination },
     { path: "/more", component: MoreInPlace },
     { path: "/popup", component: Popup },
     { path: "/about", component: About },
@@ -35,7 +36,10 @@ const publicRoutes = [
     { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
     { path: "/commingsoon", component: Commingsoon, layout: HeaderOnly },
     { path: "/blog", component: Blog },
+    { path: "/user/:id", component: ProfilePage, layout: HeaderOnly },
+
     { path: "/search/:query", component: SearchPage },
+
     { path: "*", component: Error, layout: null },
 ];
 

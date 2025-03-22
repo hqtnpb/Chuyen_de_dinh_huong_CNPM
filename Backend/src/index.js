@@ -7,6 +7,7 @@ const authRoute = require("./routes/auth");
 const uploadRoute = require("./routes/upload");
 const createBlogRoute = require("./routes/createBlog");
 const renderBlogsRoute = require("./routes/renderBlogs");
+const userRoute = require("./routes/user");
 const jwt = require("jsonwebtoken");
 
 dotenv.config();
@@ -55,7 +56,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/upload", uploadRoute);
 app.use("/api/create", verifyJWT, createBlogRoute);
 app.use("/api/render", renderBlogsRoute);
-
+app.use("/api/user", userRoute);
 app.listen(8000, () => {
     console.log("Server is running on port 8000");
 });
