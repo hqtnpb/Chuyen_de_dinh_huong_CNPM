@@ -89,8 +89,6 @@ function SearchPage() {
                 <section className={cx("user-list")}>
                     {users && users.length ? (
                         users.map((user, index) => {
-                            console.log(user);
-
                             return (
                                 <UserCard key={index} user={user}></UserCard>
                             );

@@ -1,0 +1,19 @@
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 20px;
+    .user-avt {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .btn {
+        padding: 15px 35px;
+    }
+    .blog-list{
+        margin-top: 55px;
+    }
+}

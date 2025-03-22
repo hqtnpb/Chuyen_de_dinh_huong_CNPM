@@ -43,7 +43,7 @@ const renderBlogsController = {
     },
 
     searchBlog: (req, res) => {
-        let { tag, page, query } = req.body;
+        let { tag, page, author, query } = req.body;
 
         let findQuery;
         if (tag) {
@@ -53,6 +53,8 @@ const renderBlogsController = {
             };
         } else if (query) {
             findQuery = { draft: false, title: new RegExp(query, "i") };
+        } else if (author) {
+            findQuery = { author: author, draft: false };
         }
         let maxLimit = 1;
 
@@ -98,7 +100,7 @@ const renderBlogsController = {
     },
 
     searchBlogsCount: (req, res) => {
-        let { tag, query } = req.body;
+        let { tag, author, query } = req.body;
         let findQuery;
         if (tag) {
             findQuery = {
@@ -107,6 +109,8 @@ const renderBlogsController = {
             };
         } else if (query) {
             findQuery = { draft: false, title: new RegExp(query, "i") };
+        } else if (author) {
+            findQuery = { author: author, draft: false };
         }
         Blog.countDocuments(findQuery)
             .then((count) => {
