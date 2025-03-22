@@ -30,8 +30,11 @@ const cardData = [
         rating: 4.5,
     }
 ]
+
+
 function SpotDetails() {
     return (
+        
         <div className={cx("spotdetails")}>
             <HeroSection
                 heroImage={image.spotdetails_img}

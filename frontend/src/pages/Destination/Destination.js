@@ -4,6 +4,7 @@ import Button from "~/components/Button";
 import HeroSection from "~/components/HeroSection";
 import Card from "~/components/Card";
 import image from "~/assets/image";
+import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 const data = [
     {
@@ -111,14 +112,14 @@ function Destination() {
                     </div>
                     <div className={cx("card-list")}>
                         {data.map((item, index) => (
-                            <Card
-                                key={index}
-                                imgSrc={item.imgSrc}
-                                category={item.category}
-                                title={item.title}
-                                rating={item.rating}
-                                discover
-                            ></Card>
+                                <Card
+                                    key ={index}
+                                    imgSrc={item.imgSrc}
+                                    category={item.category}
+                                    title={item.title}
+                                    rating={item.rating}
+                                    discover
+                                ></Card>
                         ))}
                     </div>
                     <Button active className={cx("bottom-btn")}>
