@@ -1,0 +1,29 @@
+.total {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    .total-likes {
+    }
+    .icon {
+        width: 20px;
+        height: 20px;
+        padding-right: 10px;
+    }
+}
+.social {
+    margin-top: 20px;
+    .social-link {
+        display: flex;
+        gap: 10px;
+    }
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 5px;
+    }
+    
+}
