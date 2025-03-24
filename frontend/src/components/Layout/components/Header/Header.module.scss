@@ -2,8 +2,8 @@
     padding: 36px 0;
     background: #fff9e5;
 }
-.inner {
 
+.inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -11,6 +11,7 @@
     .navbar__list {
         display: flex;
         align-items: center;
+        list-style: none;
         gap: 32px;
     }
 
@@ -24,7 +25,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
-        .write{
+        .write {
             display: flex;
             align-items: center;
             gap: 5px;

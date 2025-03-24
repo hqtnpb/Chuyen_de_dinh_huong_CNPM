@@ -3,16 +3,16 @@
 
 :root {
     --primary: #ff5b26;
-    --background-color: #FFF9E5;
-    --light-orange: #FFEEB7;
+    --background-color: #fff9e5;
+    --light-orange: #ffeeb7;
     --light-green: #d2ebd1;
     --light-blue: #cde9ea;
     --light-red: #ffd9bf;
     --green: #1eb482;
     --yellow: #ffc200;
     --text-color: #191b1d;
-    --desc-color: #4E5358;
-    --text-btn: #FFF;
+    --desc-color: #4e5358;
+    --text-btn: #fff;
 }
 
 * {
@@ -35,7 +35,6 @@ a {
 }
 
 .container {
-   
     width: 1170px;
     max-width: calc(100% - 48px);
     margin: 0 auto;
@@ -49,10 +48,7 @@ button {
     outline: none;
     border: none;
 }
-ol,
-ul {
-    list-style: none;
-}
+
 h1,
 h2,
 h3,

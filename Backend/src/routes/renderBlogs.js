@@ -12,5 +12,7 @@ router.post(
     renderBlogsController.allLatestBlogsCount
 );
 router.post("/search-blogs-count", renderBlogsController.searchBlogsCount);
-router.post("/search-users", renderBlogsController.searchUser);   
+
+router.post("/get-blog-details", renderBlogsController.getBlogDetails);
+router.post("/search-users", renderBlogsController.searchUser);
 module.exports = router;

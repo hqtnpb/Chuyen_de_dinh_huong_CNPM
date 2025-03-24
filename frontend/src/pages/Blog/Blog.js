@@ -31,7 +31,6 @@ function Blog() {
         "Local Guides",
         "Travel Tips",
     ];
-    console.log(blogs);
 
     let navigate = useNavigate();
     const fetchLatestBlogs = ({ page = 1 }) => {
@@ -40,7 +39,6 @@ function Blog() {
                 page,
             })
             .then(async ({ data }) => {
-                console.log(data.blogs);
 
                 let formattedData = await filterPaginationData({
                     state: blogs,
@@ -81,7 +79,7 @@ function Blog() {
     };
     const loadBlogByCategory = (e) => {
         let category = e.target.innerText.toLowerCase();
-
+        
         setBlogs(null);
 
         if (pageState === category) {
@@ -98,6 +96,7 @@ function Blog() {
                 { tag: pageState, page }
             )
             .then(async ({ data }) => {
+                
                 let formattedData = await filterPaginationData({
                     state: blogs,
                     data: data.blogs,
@@ -107,6 +106,7 @@ function Blog() {
                 });
 
                 setBlogs(formattedData);
+                
             })
             .catch((error) => {
                 console.log(error);
@@ -137,7 +137,7 @@ function Blog() {
             navigate(`/search/${query}`);
         }
     };
-
+    
     return (
         <div className={cx("blog-page")}>
             <section className={cx("blog-hero")}>
@@ -212,8 +212,9 @@ function Blog() {
                     </section>
 
                     <section className={cx("blog-list")}>
-                        {blogs && blogs.results.length ? (
+                        {blogs && blogs.results  && blogs.results.length > 0 ? (
                             blogs.results.map((blog, index) => {
+                                
                                 return (
                                     <LatestBlogPostCard
                                         key={index}

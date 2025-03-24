@@ -18,6 +18,8 @@ function LatestBlogPostCard({ content, author }) {
         blog_id: id,
     } = content;
     let { username, profile_img } = author;
+    // console.log(author);
+    
     return (
         <Link to={`/blog/${id}`}>
             <section className={cx("latest-blog")}>

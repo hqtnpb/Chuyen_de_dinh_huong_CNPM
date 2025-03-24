@@ -2,6 +2,7 @@
     margin-top: 150px;
     background-color: #fff9e5;
 }
+
 .inner {
     padding: 100px 0;
     display: flex;
@@ -22,6 +23,7 @@
     .footer-list {
         display: flex;
         flex-direction: column;
+        list-style: none;
         gap: 16px;
         .footer-item {
             color: #4e5358;

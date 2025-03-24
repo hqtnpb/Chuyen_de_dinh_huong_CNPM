@@ -19,6 +19,7 @@ import Commingsoon from "~/pages/Commingsoon";
 import Blog from "~/pages/Blog";
 import SearchPage from "~/pages/SearchPage";
 import ProfilePage from "~/pages/ProfilePage/ProfilePage";
+import BlogDetails from "~/pages/BlogDetails/BlogDetails";
 
 //public routes
 const publicRoutes = [
@@ -37,8 +38,8 @@ const publicRoutes = [
     { path: "/commingsoon", component: Commingsoon, layout: HeaderOnly },
     { path: "/blog", component: Blog },
     { path: "/user/:id", component: ProfilePage, layout: HeaderOnly },
-
     { path: "/search/:query", component: SearchPage },
+    { path: "/blog/:blog_id", component: BlogDetails },
 
     { path: "*", component: Error, layout: null },
 ];
