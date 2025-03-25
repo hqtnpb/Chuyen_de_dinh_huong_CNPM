@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Toaster, toast } from "react-hot-toast";
 import EditorJS from "@editorjs/editorjs";
@@ -30,19 +30,26 @@ const BlogEditor = () => {
     } = useContext(UserContext);
 
     let navigate = useNavigate();
+    let { blog_id } = useParams();
 
     useEffect(() => {
         if (!textEditor.isReady) {
             setTextEditor(
                 new EditorJS({
                     holder: "textEditor",
-                    data: content,
+                    data: Array.isArray(content) ? content[0] : content,
                     tools: tools,
                     placeholder: "Let's write an awesome blog!",
                 })
             );
+        } else if (textEditor && content && content.length > 0) {
+            // Khi textEditor đã có và content đã có
+            textEditor.render(content[0]).catch((err) => {
+                console.error("Lỗi render EditorJS:", err);
+            });
         }
-    }, []);
+    }, [content, textEditor]);
+
     const handleBannerUpload = (e) => {
         let img = e.target.files[0];
 
@@ -139,8 +146,8 @@ const BlogEditor = () => {
                 axios
                     .post(
                         process.env.REACT_APP_SERVER_DOMAIN +
-                            "/blog/create-blog",
-                        blogObj,
+                            "/create/create-blog",
+                        { ...blogObj, id: blog_id },
                         {
                             headers: {
                                 Authorization: `Bearer ${accessToken}`,
@@ -167,6 +174,7 @@ const BlogEditor = () => {
             });
         }
     };
+
     return (
         <div className={cx("editor")}>
             <div className={cx("container")}>
@@ -180,7 +188,7 @@ const BlogEditor = () => {
                                 </Link>
                             </div>
                             <p className={cx("text")}>
-                                {title.length ? title : "New Blog"}
+                                {title && title.length ? title : "New Blog"}
                             </p>
                         </div>
                         <div className={cx("action")}>

@@ -4,7 +4,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import styles from "./PublishForm.module.scss";
 import { EditorContext } from "~/pages/EditorPage/EditorPage";
@@ -18,6 +18,7 @@ const PublishForm = () => {
     let characterLimit = 200;
     let tagLimit = 3;
 
+    let { blog_id } = useParams();
     let {
         blog,
         blog: { banner, title, tags, desc, content },
@@ -102,7 +103,7 @@ const PublishForm = () => {
         axios
             .post(
                 process.env.REACT_APP_SERVER_DOMAIN + "/create/create-blog",
-                blogObj,
+                { ...blogObj, id: blog_id },
                 {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,

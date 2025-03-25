@@ -51,9 +51,7 @@ function TrendingBlogPost({ content, index, remainingTrendingBlogs }) {
                     </Link>
                     <div className={cx("remaining-blog")}>
                         {remainingTrendingBlogs.map((blog, index) => (
-                            <Link key={index} to={`/blog/${blog.blog_id}`}>
-                                <BlogCard blog={blog}></BlogCard>
-                            </Link>
+                            <BlogCard key={index} blog={blog}></BlogCard>
                         ))}
                     </div>
                 </div>
