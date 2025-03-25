@@ -34,6 +34,7 @@ const publicRoutes = [
     { path: "/searchresult", component: SearchResult },
     { path: "/contact", component: Contact },
     { path: "/editor", component: EditorPage, layout: null },
+    { path: "/editor/:blog_id", component: EditorPage, layout: null },
     { path: "/suggestions", component: Suggestions, layout: HeaderOnly },
     { path: "/commingsoon", component: Commingsoon, layout: HeaderOnly },
     { path: "/blog", component: Blog },

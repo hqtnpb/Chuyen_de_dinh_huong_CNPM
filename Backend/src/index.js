@@ -9,28 +9,9 @@ const createBlogRoute = require("./routes/createBlog");
 const renderBlogsRoute = require("./routes/renderBlogs");
 const userRoute = require("./routes/user");
 const jwt = require("jsonwebtoken");
-
+const verifyJWT = require("./middleWare/authMiddleWare");
 dotenv.config();
 const app = express();
-
-const verifyJWT = (req, res, next) => {
-    const authHeader = req.headers["authorization"];
-
-    const token = authHeader && authHeader.split(" ")[1];
-
-    if (token === null) {
-        return res.sendStatus(401).json({ error: "No access token" });
-    }
-
-    jwt.verify(token, process.env.SECRET_ACCESS_KEY, (err, user) => {
-        if (err) {
-            return res.status(403).json({ error: "Token is not valid" });
-        }
-
-        req.user = user.id;
-        next();
-    });
-};
 
 const connectDB = async () => {
     try {
@@ -53,10 +34,17 @@ app.use(express.json());
 
 // Routes
 app.use("/api/auth", authRoute);
+
 app.use("/api/upload", uploadRoute);
+
 app.use("/api/create", verifyJWT, createBlogRoute);
+
 app.use("/api/render", renderBlogsRoute);
+
 app.use("/api/user", userRoute);
+
 app.listen(8000, () => {
     console.log("Server is running on port 8000");
 });
+
+module.exports = { verifyJWT };

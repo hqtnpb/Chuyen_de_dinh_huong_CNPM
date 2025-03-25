@@ -8,6 +8,7 @@ import { getDay } from "~/common/date";
 import BlogInteraction from "~/components/BlogInteraction";
 import BlogCard from "~/components/BlogCard/BlogCard";
 import BlogContent from "~/components/BlogContent/BlogContent";
+import { is } from "date-fns/locale";
 const cx = classNames.bind(styles);
 
 export const blogStructure = {
@@ -27,6 +28,8 @@ function BlogDetails() {
     const [blog, setBlog] = useState(blogStructure);
 
     const [relatedBlogs, setRelatedBlogs] = useState(null);
+
+    const [isLikeByUser, setIsLikeByUser] = useState(false);
     let {
         title,
         content,
@@ -70,10 +73,11 @@ function BlogDetails() {
         resetStates();
         fetchBlogDetails();
     }, [blog_id]);
-    console.log(content);
 
     return (
-        <BlogContext.Provider value={{ blog, setBlog }}>
+        <BlogContext.Provider
+            value={{ blog, setBlog, isLikeByUser, setIsLikeByUser }}
+        >
             <section className={cx("blog-details")}>
                 <div className={cx("container")}>
                     <div className={cx("inner")}>

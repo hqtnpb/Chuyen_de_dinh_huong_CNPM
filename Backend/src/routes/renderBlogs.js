@@ -1,6 +1,6 @@
 const renderBlogsController = require("../controllers/renderBlogsController");
 const router = require("express").Router();
-
+const verifyJWT = require("../middleWare/authMiddleWare");
 router.post("/latest-blog", renderBlogsController.renderBlogs);
 
 router.get("/trending-blog", renderBlogsController.renderTrendingBlogs);
@@ -14,5 +14,11 @@ router.post(
 router.post("/search-blogs-count", renderBlogsController.searchBlogsCount);
 
 router.post("/get-blog-details", renderBlogsController.getBlogDetails);
+
 router.post("/search-users", renderBlogsController.searchUser);
+
+router.post("/like-blog", verifyJWT, renderBlogsController.likeBlog);
+
+router.post("/liked-by-user", verifyJWT, renderBlogsController.likedByUser);
+
 module.exports = router;

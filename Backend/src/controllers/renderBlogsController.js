@@ -1,5 +1,6 @@
 const Blog = require("../models/Blog");
 const User = require("../models/User");
+const Notification = require("../models/Notification");
 const renderBlogsController = {
     renderBlogs: (req, res) => {
         let { page } = req.body;
@@ -123,12 +124,12 @@ const renderBlogsController = {
     },
 
     getBlogDetails: (req, res) => {
-        let { blog_id } = req.body;
+        let { blog_id, draft, mode } = req.body;
 
-        let incrementVal = 1;
+        let incrementVal = mode !== "edit" ? 1 : 0;
 
         Blog.findOneAndUpdate(
-            { blog_id: blog_id },
+            { blog_id },
             { $inc: { "activity.total_reads": incrementVal } }
         )
             .populate(
@@ -148,7 +149,60 @@ const renderBlogsController = {
                 ).catch((error) => {
                     return res.status(500).json({ error: error.message });
                 });
+
+                if (blog.draft && !draft) {
+                    return res.status(500).json({ error: error.message });
+                }
+
                 return res.status(200).json({ blog });
+            })
+            .catch((error) => {
+                return res.status(500).json({ error: error.message });
+            });
+    },
+
+    likeBlog: (req, res) => {
+        let user_id = req.user;
+        let { _id, isLikeByUser } = req.body;
+        let incrementVal = !isLikeByUser ? 1 : -1;
+        Blog.findOneAndUpdate(
+            { _id },
+            { $inc: { "activity.total_likes": incrementVal } }
+        ).then((blog) => {
+            if (!isLikeByUser) {
+                let like = new Notification({
+                    type: "like",
+                    blog: _id,
+                    notification_for: blog.author,
+                    user: user_id,
+                });
+                like.save().then((notification) => {
+                    return res.status(200).json({ liked_by_user: true });
+                });
+            } else {
+                Notification.findOneAndDelete({
+                    user: user_id,
+                    blog: _id,
+                    type: "like",
+                })
+                    .then((data) => {
+                        return res.status(200).json({ liked_by_user: false });
+                    })
+                    .catch((error) => {
+                        return res.status(500).json({ error: error.message });
+                    });
+            }
+        });
+    },
+
+    likedByUser: (req, res) => {
+        let user_id = req.user;
+
+        let { _id } = req.body;
+
+        Notification.exists({ user: user_id, type: "like", blog: _id })
+            .then((result) => {
+                return res.status(200).json({ result });
             })
             .catch((error) => {
                 return res.status(500).json({ error: error.message });

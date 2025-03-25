@@ -9,6 +9,10 @@
         width: 20px;
         height: 20px;
         padding-right: 10px;
+        cursor: pointer;
+        &.liked {
+            color: #ff5b26;
+        }
     }
 }
 .social {
@@ -25,5 +29,4 @@
         height: 36px;
         border-radius: 5px;
     }
-    
 }
