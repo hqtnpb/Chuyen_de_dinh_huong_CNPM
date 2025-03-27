@@ -15,7 +15,7 @@ function UserNavigation() {
     const signOutUser = () => {
         removeFromSession("user");
         setUserAuth({ accessToken: null }); // logOutUser();
-        console.log("User signed out");
+        // console.log("User signed out");
     };
     return (
         <div className={cx("user-navigation")}>

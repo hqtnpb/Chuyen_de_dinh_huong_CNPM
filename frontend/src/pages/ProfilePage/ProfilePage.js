@@ -84,7 +84,7 @@ function ProfilePage() {
                 });
                 formattedData.user_id = user_id;
                 setBlogs(formattedData);
-                console.log(formattedData);
+                // console.log(formattedData);
             });
     };
     useEffect(() => {

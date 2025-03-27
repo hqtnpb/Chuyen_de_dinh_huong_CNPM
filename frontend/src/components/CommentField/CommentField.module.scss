@@ -1,0 +1,20 @@
+.comment-container {
+    .comment-field {
+        display: flex;
+        margin: 0 auto;
+        width: 85%;
+        height: auto;
+        padding: 20px;
+        border-radius: 12px;
+        background-color: #f1f1f1;
+        resize: none;
+    }
+    .comment-button {
+        display: block;
+        margin-left: 80%;
+        margin-top: 15px;
+        padding: 5px 20px;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}

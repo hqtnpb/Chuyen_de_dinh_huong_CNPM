@@ -44,24 +44,23 @@ function Header() {
                                 <Link
                                     to="/about"
                                     className={cx("navbar__link")}
-                                    href="#!"
                                 >
                                     About
                                 </Link>
                             </li>
                             <li className={cx("navbar__item")}>
-                                <Link
-                                    to="/blog"
-                                    className={cx("navbar__link")}
-                                    href="#!"
-                                >
+                                <Link to="/blog" className={cx("navbar__link")}>
                                     Blog
                                 </Link>
                             </li>
                             <li className={cx("navbar__item")}>
-                                <a className={cx("navbar__link")} href="#!">
-                                    Page
-                                </a>
+                                <Link
+                                    to="/contact"
+                                    className={cx("navbar__link")}
+                                    href="#!"
+                                >
+                                    Contact
+                                </Link>
                             </li>
                         </ul>
                     </nav>

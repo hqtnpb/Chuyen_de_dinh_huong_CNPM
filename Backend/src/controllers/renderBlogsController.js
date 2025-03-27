@@ -134,7 +134,7 @@ const renderBlogsController = {
         )
             .populate(
                 "author",
-                "personal_info.profile_img personal_info.username social_links -_id"
+                "personal_info.profile_img personal_info.username social_links "
             )
             .select(
                 "title desc content banner activity publishedAt tags blog_id"

@@ -18,10 +18,15 @@
         font-family: Syne;
         font-size: 1.7rem;
         font-weight: 700;
-        width: 700px; 
+        width: 700px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .action {
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
     .btn {
         padding: 8px 16px;
