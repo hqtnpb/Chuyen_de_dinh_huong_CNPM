@@ -1,0 +1,105 @@
+.comment-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.btn {
+    margin: 0 auto;
+    padding: 15px 35px;
+}
+// .comment-button {
+//     background-color: #007bff;
+//     color: white;
+//     padding: 12px;
+//     border: none;
+//     border-radius: 50%;
+//     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+//     cursor: pointer;
+//     transition: background 0.3s ease;
+
+//     &:hover {
+//         background-color: #0056b3;
+//     }
+// }
+
+.comment-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #ddd;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    z-index: 2000;
+    .close-button {
+        background: none;
+        border: none;
+        position: absolute;
+        padding: 10px;
+        top: 12px;
+        right: 12px;
+        cursor: pointer;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    // .comment-title {
+    //     color: #191b1d;
+    //     font-size: 5.2rem;
+    //     font-weight: 700;
+    //     line-height: 1.07;
+    // }
+
+    .comment-title {
+        margin-bottom: 55px;
+    }
+
+    .comment-list {
+        flex-grow: 1;
+        overflow-y: auto;
+        max-height: calc(100vh - 150px);
+        padding-right: 5px;
+
+        .comment-item {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    // .comment-input {
+    //     position: relative;
+    //     padding-top: 10px;
+
+    //     input {
+    //         width: 100%;
+    //         padding: 8px;
+    //         border: 1px solid #ccc;
+    //         border-radius: 6px;
+    //         font-size: 14px;
+    //     }
+    // }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); // Màu nền mờ
+    backdrop-filter: blur(5px); // Lọc mờ nội dung bên dưới
+    z-index: 1000; // Đảm bảo lớp phủ nằm trên nội dung
+    cursor: pointer; // Đóng overlay khi click vào lớp phủ
+}

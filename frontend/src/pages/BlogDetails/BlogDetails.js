@@ -8,7 +8,8 @@ import { getDay } from "~/common/date";
 import BlogInteraction from "~/components/BlogInteraction";
 import BlogCard from "~/components/BlogCard/BlogCard";
 import BlogContent from "~/components/BlogContent/BlogContent";
-import { is } from "date-fns/locale";
+import CommentContainer from "~/components/CommentContainer";
+import { fetchComments } from "~/components/CommentContainer/CommentContainer";
 const cx = classNames.bind(styles);
 
 export const blogStructure = {
@@ -19,6 +20,7 @@ export const blogStructure = {
     activity: { total_likes: 0, total_reads: 0 },
     author: { personal_info: {}, social_links: [] },
     publishedAt: "",
+    comments: { results: [] },
 };
 export const BlogContext = createContext({});
 
@@ -30,6 +32,11 @@ function BlogDetails() {
     const [relatedBlogs, setRelatedBlogs] = useState(null);
 
     const [isLikeByUser, setIsLikeByUser] = useState(false);
+
+    const [commentsWrapper, setCommentsWrapper] = useState(true);
+
+    const [totalParentCommentsLoaded, setTotalParentCommentsLoaded] =
+        useState(0);
     let {
         title,
         content,
@@ -47,7 +54,12 @@ function BlogDetails() {
                     "/render/get-blog-details",
                 { blog_id }
             )
-            .then(({ data: { blog } }) => {
+            .then(async ({ data: { blog } }) => {
+                blog.comments = await fetchComments({
+                    blog_id: blog._id,
+                    setParentCommentCountFunc: setTotalParentCommentsLoaded,
+                });
+
                 setBlog(blog);
 
                 axios
@@ -68,7 +80,11 @@ function BlogDetails() {
     const resetStates = () => {
         setBlog(blogStructure);
         setRelatedBlogs(null);
+        setIsLikeByUser(false);
+        setCommentsWrapper(false);
+        setTotalParentCommentsLoaded(0);
     };
+
     useEffect(() => {
         resetStates();
         fetchBlogDetails();
@@ -76,7 +92,16 @@ function BlogDetails() {
 
     return (
         <BlogContext.Provider
-            value={{ blog, setBlog, isLikeByUser, setIsLikeByUser }}
+            value={{
+                blog,
+                setBlog,
+                isLikeByUser,
+                setIsLikeByUser,
+                commentsWrapper,
+                setCommentsWrapper,
+                totalParentCommentsLoaded,
+                setTotalParentCommentsLoaded,
+            }}
         >
             <section className={cx("blog-details")}>
                 <div className={cx("container")}>
@@ -101,6 +126,8 @@ function BlogDetails() {
                         </Link>
 
                         <BlogInteraction></BlogInteraction>
+
+                        <CommentContainer></CommentContainer>
                         <div className={cx("content")}>
                             {content && content[0] && content[0].blocks ? (
                                 content[0].blocks.map((block, index) => {

@@ -16,7 +16,6 @@ import { faComment } from "@fortawesome/free-regular-svg-icons";
 import Button from "../Button";
 import { UserContext } from "~/App";
 import axios from "axios";
-import { set } from "date-fns";
 const cx = classNames.bind(styles);
 const socialIcons = {
     facebook: faFacebook,
@@ -41,6 +40,7 @@ function BlogInteraction() {
         setBlog,
         isLikeByUser,
         setIsLikeByUser,
+        setCommentsWrapper,
     } = useContext(BlogContext);
 
     let {
@@ -89,7 +89,7 @@ function BlogInteraction() {
                     }
                 )
                 .then(({ data }) => {
-                    console.log(data);
+                    // console.log(data);
                 })
                 .catch((error) => {
                     console.log(error);
@@ -111,7 +111,11 @@ function BlogInteraction() {
                     onClick={handleLike}
                 />
                 <span className={cx("total-comments")}>{total_comments}</span>
-                <FontAwesomeIcon icon={faComment} className={cx("icon")} />
+                <FontAwesomeIcon
+                    icon={faComment}
+                    className={cx("icon")}
+                    onClick={() => setCommentsWrapper((perVal) => !perVal)}
+                />
                 {username === author_username ? (
                     <Link to={`/editor/${blog_id}`}>
                         <Button text>Edit Blog</Button>

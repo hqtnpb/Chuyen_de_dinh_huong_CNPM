@@ -48,6 +48,12 @@
         border-radius: 50%;
         object-fit: cover;
     }
+    .action{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
 }
 
 .action__btn {
