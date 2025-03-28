@@ -4,7 +4,10 @@
     align-items: center;
     transition: transform ease 0.3s;
     &:hover{
-        transform: scale(1.1);
+        .img{
+            transform: scale(1.1);
+
+        }
     }
     .title {
         width: 370px;
@@ -35,5 +38,6 @@
 }
 
 .btn:hover{
+    text-decoration: none;
     color:#FF5B26 ;
 }

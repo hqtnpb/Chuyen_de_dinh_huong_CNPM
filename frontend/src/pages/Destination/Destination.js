@@ -4,7 +4,10 @@ import Button from "~/components/Button";
 import HeroSection from "~/components/HeroSection";
 import Card from "~/components/Card";
 import image from "~/assets/image";
+import { useState } from "react";
 const cx = classNames.bind(styles);
+
+
 const data = [
     {
         imgSrc: image.discover_01,
@@ -81,6 +84,12 @@ const data = [
 ];
 
 function Destination() {
+
+    const [kho, setKho] = useState(3);
+
+    const click = () => {
+        setKho((prev) => prev = 9);
+    }
     return (
         <section className={cx("destination")}>
             <HeroSection
@@ -100,7 +109,7 @@ function Destination() {
                             Popular
                         </Button>
                         <Button inactive className={cx("btn")}>
-                            Regions
+                        Regions
                         </Button>
                         <Button inactive className={cx("btn")}>
                             Countries
@@ -110,18 +119,24 @@ function Destination() {
                         </Button>
                     </div>
                     <div className={cx("card-list")}>
-                        {data.map((item, index) => (
-                            <Card
-                                key={index}
-                                imgSrc={item.imgSrc}
-                                category={item.category}
-                                title={item.title}
-                                rating={item.rating}
-                                discover
-                            ></Card>
-                        ))}
+                        {data.map((item, index) =>
+                            index < kho ? (
+                                <Card
+                                    key={index}
+                                    imgSrc={item.imgSrc}
+                                    category={item.category}
+                                    title={item.title}
+                                    rating={item.rating}
+                                    discover
+                                ></Card>
+                            ) : null
+                        )}
                     </div>
-                    <Button active className={cx("bottom-btn")}>
+                    <Button
+                        onClick={() => click()}
+                        active
+                        className={cx("bottom-btn")}
+                    >
                         Load More
                     </Button>
                 </div>
