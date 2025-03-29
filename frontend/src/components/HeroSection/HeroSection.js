@@ -75,7 +75,7 @@ function HeroSection({
                                     <img
                                         src={image.location_icon}
                                         className={cx("icon")}
-                                    ></img>
+                                    ></img> 
                                     <input
                                         type="text"
                                         placeholder="Where do you want to go?"

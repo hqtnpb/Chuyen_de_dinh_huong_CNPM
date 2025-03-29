@@ -111,6 +111,7 @@ function Destination() {
                     </div>
                     <div className={cx("card-list")}>
                         {data.map((item, index) => (
+                            index < 3 ? (
                             <Card
                                 key={index}
                                 imgSrc={item.imgSrc}
@@ -118,10 +119,10 @@ function Destination() {
                                 title={item.title}
                                 rating={item.rating}
                                 discover
-                            ></Card>
+                            ></Card>) : null
                         ))}
                     </div>
-                    <Button active className={cx("bottom-btn")}>
+                    <Button  active className={cx("bottom-btn")} >
                         Load More
                     </Button>
                 </div>
