@@ -51,7 +51,7 @@ const deleteComments = (_id) => {
 };
 
 const commentController = {
-    addComment: (req, res) => {
+    addComment: async (req, res) => {
         let user_id = req.user;
 
         let { _id, comment, blog_author, replying_to } = req.body;
@@ -99,10 +99,14 @@ const commentController = {
                 await Comment.findOneAndUpdate(
                     { _id: replying_to },
                     { $push: { children: commentFile._id } }
-                ).then((replyingToCommentDoc) => {
-                    notificationObj.notification_for =
-                        replyingToCommentDoc.commented_by;
-                });
+                )
+                    .then((replyingToCommentDoc) => {
+                        notificationObj.notification_for =
+                            replyingToCommentDoc.commented_by;
+                    })
+                    .catch((error) => {
+                        console.log(error.message);
+                    });
             }
 
             new Notification(notificationObj).save().then((notification) => {
@@ -174,9 +178,11 @@ const commentController = {
 
         Comment.findOne({ _id }).then((comment) => {
             if (
-                String(user_id) === String(comment.commented_by) ||
-                String(user_id) === String(comment.blog_author)
+                user_id == comment.commented_by ||
+                user_id == comment.blog_author
             ) {
+                console.log(comment.commented_by);
+
                 deleteComments(_id);
                 return res.status(200).json({
                     message: "Comment deleted successfully",

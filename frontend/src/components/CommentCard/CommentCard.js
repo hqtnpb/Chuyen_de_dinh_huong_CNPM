@@ -68,9 +68,9 @@ function CommentCard({ index, leftVal, commentData }) {
             ) {
                 commentsArr.splice(startingPoint, 1);
 
-                if (commentsArr[startingPoint]) {
-                    break;
-                }
+                // if (commentsArr[startingPoint]) {
+                //     break;
+                // }
             }
         }
 
@@ -133,24 +133,27 @@ function CommentCard({ index, leftVal, commentData }) {
         removeCommentsCards(index + 1);
     };
 
-    const loadReplies = ({ skip = 0 }) => {
-        if (children.length) {
+    const loadReplies = ({ skip = 0, currentIndex = index }) => {
+        if (commentsArr[currentIndex].children.length) {
             hideReplies();
 
             axios
                 .post(
                     process.env.REACT_APP_SERVER_DOMAIN +
                         "/comment/get-replies",
-                    { _id, skip }
+                    { _id: commentsArr[currentIndex], skip }
                 )
                 .then(({ data: { replies } }) => {
-                    console.log(replies);
-                    commentData.isReplyLoaded = true;
+                    commentsArr[currentIndex].isReplyLoaded = true;
                     for (let i = 0; i < replies?.length; i++) {
                         replies[i].childrenLevel =
-                            commentData.childrenLevel + 1;
+                            commentsArr[currentIndex].childrenLevel + 1;
 
-                        commentsArr.splice(index + 1 + i + skip, 0, replies[i]);
+                        commentsArr.splice(
+                            currentIndex + 1 + i + skip,
+                            0,
+                            replies[i]
+                        );
                     }
 
                     setBlog({
@@ -169,6 +172,59 @@ function CommentCard({ index, leftVal, commentData }) {
         }
 
         setIsReplying((preVal) => !preVal);
+    };
+
+    const LoadMoreRepliesButton = () => {
+        let parentIndex = getParentIndex();
+
+        if (commentsArr[index + 1]) {
+            if (
+                commentsArr[index + 1].childrenLevel <
+                commentsArr[index].childrenLevel
+            ) {
+                if (
+                    index - parentIndex <
+                    commentsArr[parentIndex].children.length
+                ) {
+                    return (
+                        <Button
+                            text
+                            className={cx("load-more-btn")}
+                            onClick={() =>
+                                loadReplies({
+                                    skip: index - parentIndex,
+                                    currentIndex: parentIndex,
+                                })
+                            }
+                        >
+                            Load More Replies
+                        </Button>
+                    );
+                }
+            }
+        } else {
+            if (parentIndex) {
+                if (
+                    index - parentIndex <
+                    commentsArr[parentIndex].children.length
+                ) {
+                    return (
+                        <Button
+                            text
+                            className={cx("load-more-btn")}
+                            onClick={() =>
+                                loadReplies({
+                                    skip: index - parentIndex,
+                                    currentIndex: parentIndex,
+                                })
+                            }
+                        >
+                            Load More Replies
+                        </Button>
+                    );
+                }
+            }
+        }
     };
 
     return (
@@ -238,6 +294,7 @@ function CommentCard({ index, leftVal, commentData }) {
             ) : (
                 ""
             )}
+            <LoadMoreRepliesButton></LoadMoreRepliesButton>
         </>
     );
 }
