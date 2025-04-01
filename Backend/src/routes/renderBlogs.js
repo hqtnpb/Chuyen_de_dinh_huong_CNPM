@@ -21,4 +21,17 @@ router.post("/like-blog", verifyJWT, renderBlogsController.likeBlog);
 
 router.post("/liked-by-user", verifyJWT, renderBlogsController.likedByUser);
 
+router.post(
+    "/user-written-blogs",
+    verifyJWT,
+    renderBlogsController.userWrittenBlogs
+);
+
+router.post(
+    "/user-written-blogs-count",
+    verifyJWT,
+    renderBlogsController.userWrittenBlogsCount
+);
+router.post("/delete-blog", verifyJWT, renderBlogsController.deleteBlog);
+
 module.exports = router;

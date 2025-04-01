@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
@@ -11,14 +11,38 @@ import styles from "./Header.module.scss";
 import Button from "~/components/Button/Button";
 import image from "~/assets/image";
 import UserNavigation from "~/components/UserNavigation";
+import axios from "axios";
+import { set } from "date-fns";
 const cx = classNames.bind(styles);
 
 function Header() {
     const {
         userAuth,
-        userAuth: { accessToken, profile_img },
+        userAuth: { accessToken, profile_img, new_notification_available },
+        setUserAuth,
     } = useContext(UserContext);
     const [userNavPanel, setUserNavPanel] = useState(false);
+
+    useEffect(() => {
+        if (accessToken) {
+            axios
+                .get(
+                    process.env.REACT_APP_SERVER_DOMAIN +
+                        "/notifications/new-notification",
+                    {
+                        headers: {
+                            Authorization: `Bearer ${accessToken}`,
+                        },
+                    }
+                )
+                .then(({ data }) => {
+                    setUserAuth({ ...userAuth, ...data });
+                })
+                .catch((err) => {
+                    console.log(err.message);
+                });
+        }
+    }, [accessToken]);
 
     return (
         <header className={cx("header")}>
@@ -76,7 +100,20 @@ function Header() {
 
                             <Link to="/dashboard/notification">
                                 <button className={cx("btn")}>
-                                    <FontAwesomeIcon icon={faBell} size="lg" />
+                                    <FontAwesomeIcon
+                                        icon={faBell}
+                                        size="lg"
+                                        style={{
+                                            color: new_notification_available
+                                                ? "#FF5B26"
+                                                : "black",
+                                        }}
+                                    />
+                                    {new_notification_available ? (
+                                        <span className={cx("dot")}></span>
+                                    ) : (
+                                        ""
+                                    )}
                                 </button>
                             </Link>
                             <div className={cx("profile")}>

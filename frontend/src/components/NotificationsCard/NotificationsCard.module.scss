@@ -1,0 +1,36 @@
+.notification-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    .user-info {
+        width: 110px;
+        overflow: hidden;
+        .user-avt {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .title {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        width: 500px;
+        .text {
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+        .time {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #999;
+        }
+    }
+}

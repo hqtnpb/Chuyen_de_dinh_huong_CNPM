@@ -7,8 +7,17 @@ export const filterPaginationData = async ({
     page,
     countRoute,
     data_to_send = {},
+    user = undefined,
 }) => {
     let obj;
+
+    let headers = {};
+
+    if (user) {
+        headers.headers = {
+            Authorization: `Bearer ${user}`,
+        };
+    }
 
     if (state !== null && !create_new_arr) {
         obj = {
@@ -20,7 +29,8 @@ export const filterPaginationData = async ({
         await axios
             .post(
                 process.env.REACT_APP_SERVER_DOMAIN + countRoute,
-                data_to_send
+                data_to_send,
+                headers
             )
             .then(({ data: { totalDocs } }) => {
                 obj = {

@@ -29,17 +29,52 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            background-color: #fff;
             padding: 10px;
             border-radius: 9999px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            &:hover {
+                background: rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                ); // Màu trắng trong suốt nhẹ
+                backdrop-filter: blur(10px); // Làm mờ nền phía sau
+                -webkit-backdrop-filter: blur(10px); // Hỗ trợ Safari
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+                transform: translateY(-5px);
+            }
         }
     }
 
     .btn {
+        position: relative;
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: #fff;
+        color: black;
+        background: transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        .dot {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ff5b26;
+            z-index: 1;
+        }
+        &:hover {
+            background: rgba(255, 255, 255, 0.1); // Màu trắng trong suốt nhẹ
+            backdrop-filter: blur(10px); // Làm mờ nền phía sau
+            -webkit-backdrop-filter: blur(10px); // Hỗ trợ Safari
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transform: translateY(-5px);
+        }
     }
 
     .user-avt {
@@ -48,12 +83,11 @@
         border-radius: 50%;
         object-fit: cover;
     }
-    .action{
+    .action {
         display: flex;
         align-items: center;
         gap: 20px;
     }
-
 }
 
 .action__btn {
