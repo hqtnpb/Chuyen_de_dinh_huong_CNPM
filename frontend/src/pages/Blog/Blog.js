@@ -160,6 +160,7 @@ function Blog() {
                                 <input
                                     className={cx("search-input")}
                                     placeholder="Search articles..."
+                                    type="search"
                                     onKeyDown={handleSearch}
                                 ></input>
                                 <div className={cx("icon-wrapper")}>

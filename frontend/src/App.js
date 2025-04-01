@@ -4,19 +4,23 @@ import { useState, useEffect } from "react";
 import { publicRoutes } from "~/routes";
 import { DefaultLayout } from "~/components/Layout";
 import { lookInSession } from "./common/session";
-
+import ScrollToTop from "./common/scrollToTop";
 export const UserContext = createContext({});
+
 function App() {
     const [userAuth, setUserAuth] = useState({});
+
     useEffect(() => {
         let userInSession = lookInSession("user");
         userInSession
             ? setUserAuth(JSON.parse(userInSession))
             : setUserAuth({ accessToken: null });
     }, []);
+
     return (
         <UserContext.Provider value={{ userAuth, setUserAuth }}>
             <Router>
+                <ScrollToTop />
                 <div className="App">
                     <Routes>
                         {publicRoutes.map((route, index) => {
@@ -29,7 +33,7 @@ function App() {
                                 Layout = Fragment;
                             }
 
-                            return (
+                            return route.children ? (
                                 <Route
                                     key={index}
                                     path={route.path}
@@ -38,7 +42,25 @@ function App() {
                                             <Page />
                                         </Layout>
                                     }
-                                ></Route>
+                                >
+                                    {route.children.map((child, idx) => (
+                                        <Route
+                                            key={idx}
+                                            path={child.path}
+                                            element={<child.component />}
+                                        />
+                                    ))}
+                                </Route>
+                            ) : (
+                                <Route
+                                    key={index}
+                                    path={route.path}
+                                    element={
+                                        <Layout>
+                                            <Page />
+                                        </Layout>
+                                    }
+                                />
                             );
                         })}
                     </Routes>

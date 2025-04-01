@@ -9,6 +9,7 @@ const createBlogRoute = require("./routes/createBlog");
 const renderBlogsRoute = require("./routes/renderBlogs");
 const userRoute = require("./routes/user");
 const commentRoute = require("./routes/comment");
+const notificationsRoute = require("./routes/notifications");
 const jwt = require("jsonwebtoken");
 const verifyJWT = require("./middleWare/authMiddleWare");
 dotenv.config();
@@ -45,6 +46,8 @@ app.use("/api/render", renderBlogsRoute);
 app.use("/api/user", userRoute);
 
 app.use("/api/comment", commentRoute);
+
+app.use("/api/notifications", notificationsRoute);
 
 app.listen(8000, () => {
     console.log("Server is running on port 8000");

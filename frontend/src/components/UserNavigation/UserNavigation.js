@@ -28,7 +28,7 @@ function UserNavigation() {
                 </li>
 
                 <li className={cx("nav-item")}>
-                    <Link to="/setting/edit-profile">Settings</Link>
+                    <Link to="/settings">Settings</Link>
                 </li>
                 <Button text className={cx("btn")} onClick={signOutUser}>
                     Sign Out

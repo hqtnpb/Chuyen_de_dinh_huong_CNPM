@@ -3,13 +3,13 @@ import styles from "./LoadMoreButton.module.scss";
 import Button from "../Button/Button";
 const cx = classNames.bind(styles);
 
-function LoadMoreButton({ state, fetchDataFunc }) {
+function LoadMoreButton({ state, fetchDataFunc, additionalParam }) {
     if (state !== null && state.totalDocs > state.results.length) {
         return (
             <Button
                 className={cx("load-more")}
                 onClick={() => {
-                    fetchDataFunc({ page: state.page + 1 });
+                    fetchDataFunc({ ...additionalParam, page: state.page + 1 });
                 }}
             >
                 Load More

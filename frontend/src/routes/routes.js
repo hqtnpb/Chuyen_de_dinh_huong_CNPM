@@ -20,10 +20,47 @@ import Blog from "~/pages/Blog";
 import SearchPage from "~/pages/SearchPage";
 import ProfilePage from "~/pages/ProfilePage/ProfilePage";
 import BlogDetails from "~/pages/BlogDetails/BlogDetails";
+import SideNav from "~/components/SideNav/SideNav";
+import Notifications from "~/pages/Notifications/Notifications";
+import ManageBlogs from "~/pages/ManageBlogs";
+// const EditProfilePlaceholder = () => <h2>Edit Profile Page (Coming Soon)</h2>;
+// const ChangePasswordPlaceholder = () => (
+//     <h2>Change Password Page (Coming Soon)</h2>
+// );
 
 //public routes
 const publicRoutes = [
     { path: "/", component: Home },
+    {
+        path: "/settings",
+        component: SideNav,
+        layout: HeaderOnly,
+        children: [
+            {
+                path: "edit-profile",
+                component: Commingsoon,
+            },
+            {
+                path: "change-password",
+                component: Commingsoon,
+            },
+        ],
+    },
+    {
+        path: "/dashboard",
+        component: SideNav,
+        layout: HeaderOnly,
+        children: [
+            {
+                path: "blogs",
+                component: ManageBlogs,
+            },
+            {
+                path: "notification",
+                component: Notifications,
+            },
+        ],
+    },
     { path: "/signup", component: SignUp, layout: HeaderOnly },
     { path: "/signin", component: Login, layout: HeaderOnly },
     { path: "/destination", component: Destination },
