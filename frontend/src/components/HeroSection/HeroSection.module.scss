@@ -1,3 +1,5 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .more {
     .background {
         position: relative;
@@ -19,7 +21,9 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    @include abstracts.screen(sm) {
+        width: 100%;
+    }
     .background {
         width: 100vw;
     }
@@ -32,13 +36,20 @@
         position: absolute;
         margin-top: 40px;
         text-align: center;
-
+        width: 100%;
+        @include abstracts.screen(sm) {
+            margin-top: 15px;
+        }
         .title {
             width: 870px;
             color: #191b1d;
             font-size: 7.2rem;
             font-weight: 700;
             line-height: 1;
+            @include abstracts.screen(sm) {
+                width: 100%;
+                font-size: 5rem;
+            }
         }
 
         .desc {
@@ -49,6 +60,9 @@
             font-size: 1.8rem;
             font-weight: 400;
             line-height: 1.67;
+            @include abstracts.screen(sm) {
+                width: 100%;
+            }
         }
     }
 
@@ -64,7 +78,11 @@
         background-color: #fff;
         border-radius: 42px;
         box-shadow: 0px 20px 90px 0px rgba(157, 110, 0, 0.1);
-
+        @include abstracts.screen(sm) {
+            width: 100%;
+            margin-top: 20px;
+            height: 60px;
+        }
         .input {
             position: relative;
             width: 40%;
@@ -73,34 +91,53 @@
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.75;
+            @include abstracts.screen(sm) {
+                padding: 10px;
+                font-size: 1.3rem;
+            }
         }
 
         .icon {
             cursor: pointer;
-            
+            @include abstracts.screen(sm) {
+                width: 15px;
+                height: 15px;
+            }
         }
 
         &::before {
             z-index: 1;
             content: "";
             position: absolute;
-            top: 10px;
-            left: 300px;
+            top: 50%;
+            left: 40%;
             width: 1px;
             height: 60px;
             background: #d9dee2;
+            transform: translateY(-50%);
+            @include abstracts.screen(sm) {
+                left: 42%;
+            }
         }
 
         .btn {
-            width: 131px;
-            padding: 20px 0;
+            padding: 15px 35px;
+            @include abstracts.screen(sm) {
+                padding: 7px;
+            }
         }
 
         .date {
             position: absolute;
-            top: 84px;
-            left: 300px;
+            top: 100%;
+            left: 36%;
+            z-index: 1;
             border-radius: 12px;
+            @include abstracts.screen(sm) {
+                left: 0;
+                right: 0;
+                z-index: 1;
+            }
         }
     }
 
@@ -110,6 +147,10 @@
         width: 1170px;
         height: 500px;
         border-radius: 24px;
+        @include abstracts.screen(sm) {
+            width: 100%;
+            height: auto;
+        }
     }
 }
 .more {

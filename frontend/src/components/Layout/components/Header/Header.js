@@ -2,9 +2,10 @@ import classNames from "classnames/bind";
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import { UserContext } from "~/App";
 import styles from "./Header.module.scss";
@@ -12,7 +13,6 @@ import Button from "~/components/Button/Button";
 import image from "~/assets/image";
 import UserNavigation from "~/components/UserNavigation";
 import axios from "axios";
-import { set } from "date-fns";
 const cx = classNames.bind(styles);
 
 function Header() {
@@ -22,7 +22,7 @@ function Header() {
         setUserAuth,
     } = useContext(UserContext);
     const [userNavPanel, setUserNavPanel] = useState(false);
-
+    const [isOpen, setIsOpen] = useState(false);
     useEffect(() => {
         if (accessToken) {
             axios
@@ -48,6 +48,14 @@ function Header() {
         <header className={cx("header")}>
             <div className={cx("container")}>
                 <div className={cx("inner")}>
+                    <FontAwesomeIcon
+                        icon={faBars}
+                        className={cx("more-icon")}
+                        onClick={() => {
+                            setIsOpen(!isOpen);
+                        }}
+                    />
+
                     <div className={cx("logo")}>
                         <Link to="/">
                             <img src={image.logo} alt="Path Way" />
@@ -55,7 +63,20 @@ function Header() {
                     </div>
 
                     <nav className={cx("navbar")}>
-                        <ul className={cx("navbar__list")}>
+                        <ul
+                            className={cx("navbar__list", {
+                                show: isOpen,
+                                hide: !isOpen,
+                            })}
+                        >
+                            <button
+                                className={cx("close-button")}
+                                onClick={() => {
+                                    setIsOpen(false);
+                                }}
+                            >
+                                <FontAwesomeIcon icon={faTimes} />
+                            </button>
                             <li className={cx("navbar__item")}>
                                 <Link
                                     to="/destination"
@@ -87,6 +108,15 @@ function Header() {
                                 </Link>
                             </li>
                         </ul>
+                        <div
+                            className={cx("navbar__overlay", {
+                                show: isOpen,
+                                hide: !isOpen,
+                            })}
+                            onClick={() => {
+                                setIsOpen(false);
+                            }}
+                        ></div>
                     </nav>
 
                     {accessToken ? (
@@ -116,6 +146,7 @@ function Header() {
                                     )}
                                 </button>
                             </Link>
+
                             <div className={cx("profile")}>
                                 <img
                                     className={cx("user-avt")}
@@ -124,20 +155,20 @@ function Header() {
                                         setUserNavPanel(!userNavPanel)
                                     }
                                 ></img>
+                                {userNavPanel ? (
+                                    <UserNavigation></UserNavigation>
+                                ) : (
+                                    ""
+                                )}
                             </div>
-                            {userNavPanel ? (
-                                <UserNavigation></UserNavigation>
-                            ) : (
-                                ""
-                            )}
                         </div>
                     ) : (
                         <div className={cx("action")}>
-                            <Button text>
+                            <Button text className={cx("signup-btn")}>
                                 <Link to="/signin">Sign In</Link>
                             </Button>
 
-                            <Button active className={cx("action__btn")}>
+                            <Button active className={cx("signup-btn")}>
                                 <Link to="/signup">Sign Up</Link>
                             </Button>
                         </div>

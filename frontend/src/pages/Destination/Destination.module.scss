@@ -1,9 +1,13 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .content {
     margin-top: 70px;
     .top-btn {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 10px;
+
         .btn {
             padding: 8px 16px;
             font-size: 14px;
@@ -16,6 +20,9 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
+        @include abstracts.screen(sm) {
+            grid-template-columns: 1fr;
+        }
     }
     .bottom-btn {
         display: block;

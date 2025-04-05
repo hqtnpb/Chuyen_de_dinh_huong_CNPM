@@ -2,18 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "~/App";
 import reportWebVitals from "./reportWebVitals";
-import GlobalStyle from "~/components/GlobalStyle";
-import Login from "./pages/Login/Login";
-import SignUp from "./pages/SignUp/SignUp";
-import Popup from "./components/PopUp";
-import About from "./pages/About";
+// import GlobalStyle from "~/components/GlobalStyle";
+import "~/styles/main.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     // <React.StrictMode>
-    <GlobalStyle>
+    // <GlobalStyle>
         <App />
-    </GlobalStyle>
+    // </GlobalStyle>
     // </React.StrictMode>
 );
 

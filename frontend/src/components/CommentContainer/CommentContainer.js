@@ -79,6 +79,7 @@ function CommentContainer() {
                     onClick={() => setCommentsWrapper(false)}
                 ></div>
             )}
+            
             <motion.div
                 initial={{ x: "100%", opacity: 0 }}
                 animate={{

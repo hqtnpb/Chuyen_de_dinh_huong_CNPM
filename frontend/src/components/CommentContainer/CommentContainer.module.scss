@@ -1,3 +1,5 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .comment-wrapper {
     position: fixed;
     bottom: 20px;
@@ -37,6 +39,9 @@
     flex-direction: column;
     transition: transform 0.3s ease;
     z-index: 2000;
+    @include abstracts.screen(sm) {
+        width: 100%;
+    }
     .close-button {
         background: none;
         border: none;
