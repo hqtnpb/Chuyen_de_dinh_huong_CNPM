@@ -1,14 +1,23 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .discover {
     margin-top: 150px;
+    width: 100%;
+    @include abstracts.screen(sm) {
+        margin-top: 100px;
+    }
 }
 .title {
     width: 670px;
     margin: 0 auto;
     color: #191b1d;
     text-align: center;
-    font-size: 52px;
+    font-size: 5.2rem;
     font-weight: 700;
     line-height: 1.1;
+    @include abstracts.screen(sm) {
+        width: 100%;
+    }
 }
 .card-list {
     margin-top: 70px;
@@ -16,6 +25,10 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 30px;
+    @include abstracts.screen(sm) {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
 }
 .btn {
     display: block;
@@ -26,4 +39,7 @@
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.66;
+    @include abstracts.screen(sm) {
+        margin-top: 30px;
+    }
 }

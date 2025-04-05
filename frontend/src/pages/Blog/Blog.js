@@ -192,52 +192,52 @@ function Blog() {
                 </div>
             </section>
             <div className={cx("blog-content")}>
-                <div className={cx("container")}>
-                    <section className={cx("trending-blog")}>
-                        {trendingBlogs &&
-                            trendingBlogs.map((blog, index) => {
-                                return (
-                                    <TrendingBlogPost
-                                        key={index}
-                                        content={blog}
-                                        index={index}
-                                        remainingTrendingBlogs={
-                                            remainingTrendingBlogs
-                                        }
-                                    ></TrendingBlogPost>
-                                );
-                            })}
-                    </section>
+                <section className={cx("trending-blog")}>
+                    {trendingBlogs &&
+                        trendingBlogs.map((blog, index) => {
+                            return (
+                                <TrendingBlogPost
+                                    key={index}
+                                    content={blog}
+                                    index={index}
+                                    remainingTrendingBlogs={
+                                        remainingTrendingBlogs
+                                    }
+                                ></TrendingBlogPost>
+                            );
+                        })}
+                </section>
 
-                    <section className={cx("blog-list")}>
-                        {blogs && blogs.results && blogs.results.length > 0 ? (
-                            blogs.results.map((blog, index) => {
-                                return (
-                                    <LatestBlogPostCard
-                                        key={index}
-                                        content={blog}
-                                        author={blog.author.personal_info}
-                                    ></LatestBlogPostCard>
-                                );
-                            })
-                        ) : (
-                            <NoDataMessage
-                                message={"Sorry!! No blog published hẹ hẹ hẹ "}
-                            ></NoDataMessage>
-                        )}
-                        <LoadMoreButton
-                            state={blogs}
-                            fetchDataFunc={
-                                pageState === "all articles"
-                                    ? fetchLatestBlogs
-                                    : fetchBlogByCategory
-                            }
-                        ></LoadMoreButton>
-                    </section>
+                <section className={cx("blog-list")}>
+                    {blogs && blogs.results && blogs.results.length > 0 ? (
+                        blogs.results.map((blog, index) => {
+                            return (
+                                <LatestBlogPostCard
+                                    key={index}
+                                    content={blog}
+                                    author={blog.author.personal_info}
+                                ></LatestBlogPostCard>
+                            );
+                        })
+                    ) : (
+                        <NoDataMessage
+                            message={"Sorry!! No blog published hẹ hẹ hẹ "}
+                        ></NoDataMessage>
+                    )}
+                    <LoadMoreButton
+                        state={blogs}
+                        fetchDataFunc={
+                            pageState === "all articles"
+                                ? fetchLatestBlogs
+                                : fetchBlogByCategory
+                        }
+                    ></LoadMoreButton>
+                </section>
 
-                    {pageState === "all articles" && currentPosts && (
-                        <section className={cx("blog-card")}>
-                            <div className={cx("inner")}>
+                {pageState === "all articles" && currentPosts && (
+                    <section className={cx("blog-card")}>
+                        <div className={cx("inner")}>
+                            <div className={cx("container")}>
                                 <div className={cx("blog-card-list")}>
                                     {currentPosts.map((blog, index) => {
                                         return (
@@ -255,9 +255,9 @@ function Blog() {
                                     currentPage={currentPage}
                                 ></Pagination> */}
                             </div>
-                        </section>
-                    )}
-                </div>
+                        </div>
+                    </section>
+                )}
             </div>
         </div>
     );

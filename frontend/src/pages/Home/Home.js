@@ -12,7 +12,6 @@ const cx = classNames.bind(styles);
 function Home() {
     return (
         <div className={cx("home")}>
-            
             <HeroSection
                 heroImage={image.hero_image}
                 heroBackground={image.hero_decor_image}
@@ -38,6 +37,5 @@ function Home() {
         </div>
     );
 }
-
 
 export default Home;

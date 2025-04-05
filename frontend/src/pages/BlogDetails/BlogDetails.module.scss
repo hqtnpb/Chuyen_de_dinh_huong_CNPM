@@ -1,8 +1,13 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .banner {
     height: 470px;
     width: 100%;
     object-fit: cover;
     border-radius: 12px;
+    @include abstracts.screen(sm) {
+        height: auto;
+    }
 }
 .title {
     margin-top: 55px;
@@ -11,6 +16,10 @@
     font-size: 5.2rem;
     font-weight: 700;
     line-height: 1.07;
+    @include abstracts.screen(sm) {
+        width: 100%;
+        font-size: 3.6rem;
+    }
 }
 .author {
     width: 370px;
@@ -58,4 +67,8 @@
     display: flex;
     flex-direction: column;
     margin: 55px auto 0;
+
+    @include abstracts.screen(sm) {
+        width: 100%;
+    }
 }

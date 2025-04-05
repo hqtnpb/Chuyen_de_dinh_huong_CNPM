@@ -1,11 +1,15 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .toolkit {
     .card {
         border-radius: 12px;
         background: #fff;
-
     }
 
     .content {
+        @include abstracts.screen(sm) {
+            margin-top: 30px;
+        }
         .icon {
             width: 64px;
             margin-top: 38px;
@@ -13,7 +17,7 @@
 
         .title {
             margin-top: 28px;
-            color: #191B1D;
+            color: #191b1d;
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.27;
@@ -22,7 +26,7 @@
         .desc {
             margin: 16px 20px 0;
             width: 330px;
-            color: #4E5358;
+            color: #4e5358;
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.75;
@@ -38,7 +42,7 @@
 .mission {
     .card {
         border-radius: 12px;
-        background: #FFF9E5;
+        background: #fff9e5;
     }
 
     .content {
@@ -48,7 +52,7 @@
         }
 
         .title {
-            color: #191B1D;
+            color: #191b1d;
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.27;
@@ -56,7 +60,7 @@
         }
 
         .desc {
-            color:#4E5358;
+            color: #4e5358;
             font-family: Manrope;
             font-size: 1.6rem;
             font-weight: 400;

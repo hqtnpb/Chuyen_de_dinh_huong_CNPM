@@ -1,3 +1,5 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .footer {
     margin-top: 150px;
     background-color: #fff9e5;
@@ -7,10 +9,19 @@
     padding: 100px 0;
     display: flex;
     gap: 100px;
+    @include abstracts.screen(sm) {
+        flex-wrap: wrap;
+        padding-top: 30px;
+        gap: 30px;
+    }
 }
 .column-list {
     display: flex;
     gap: 100px;
+    @include abstracts.screen(sm) {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
 }
 .column-item {
     .title {
@@ -43,12 +54,18 @@
     }
     .subscribe {
         margin-top: 24px;
+        @include abstracts.screen(sm) {
+            display: flex;
+        }
         .input-email {
             width: 258px;
             padding: 16px;
             border-radius: 30px;
             border: 1px solid #4e5358;
             background-color: transparent;
+            @include abstracts.screen(sm) {
+                width: 100%;
+            }
             &::placeholder {
                 color: #4e5358;
                 font-size: 1.6rem;

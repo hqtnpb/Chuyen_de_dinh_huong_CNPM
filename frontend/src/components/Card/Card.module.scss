@@ -1,7 +1,13 @@
+@use "./src/styles/abstracts" as abstracts;
+
 //Card item
 .card-item {
     position: relative;
     width: 370px;
+    @include abstracts.screen(sm) {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
 
 // Discover Card
@@ -19,12 +25,16 @@
         padding: 20px;
         width: 330px;
         height: 128px;
-        bottom: 40px;
-        left: 20px;
+        bottom: 10%;
+        left: 5%;
         border-radius: 12px;
         background: #fff;
         box-shadow: 0px 20px 90px 0px rgba(25, 27, 29, 0.1);
         transition: transform 0.3s ease;
+        @include abstracts.screen(sm) {
+            transition: none;
+            width: 90%;
+        }
     }
 
     .category {
@@ -63,13 +73,17 @@
 
     &:hover .image {
         transform: scale(1.1);
+        @include abstracts.screen(sm) {
+            transform: none;
+        }
     }
 
     &:hover .content {
         transform: scale(1.1);
-
+        @include abstracts.screen(sm) {
+            transform: none;
+        }
     }
-
 }
 
 //Explore Card
@@ -174,30 +188,24 @@
             border-radius: 12px;
             transition: transform 0.3s ease;
         }
-
     }
 
     .content {
-
-
         .category {
             margin-top: 16px;
-            color: #4E5358;
+            color: #4e5358;
             font-family: Manrope;
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.75;
-
         }
 
         .title {
             margin-top: 4px;
-            color: #191B1D;
+            color: #191b1d;
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.27;
-
-
         }
 
         .rate {
@@ -207,7 +215,7 @@
             margin: 18px;
             padding: 4px 12px;
             border-radius: 6px;
-            background: #FFF;
+            background: #fff;
 
             .star {
                 width: 14px;
@@ -215,20 +223,18 @@
             }
 
             .rating {
-                color: #191B1D;
+                color: #191b1d;
                 font-family: Manrope;
                 font-size: 1.4rem;
                 font-weight: 600;
                 line-height: 1.71;
             }
         }
-
     }
 
     &:hover .image {
         transform: scale(1.1);
     }
-
 }
 
 //SearchResult Card
@@ -252,7 +258,7 @@
             padding: 4px 12px;
             width: 90px;
             border-radius: 6px;
-            background: #FFF;
+            background: #fff;
 
             .icon {
                 width: 12px;
@@ -260,7 +266,7 @@
 
             .location-name {
                 margin-left: 4px;
-                color: #191B1D;
+                color: #191b1d;
                 font-size: 1.4rem;
                 font-weight: 600;
                 line-height: 1.71;
@@ -271,7 +277,7 @@
     .content {
         .category {
             margin-top: 18px;
-            color: #4E5358;
+            color: #4e5358;
             font-size: 1.6rem;
             font-weight: 400;
             line-height: 1.75;
@@ -279,7 +285,7 @@
 
         .title {
             margin-top: 10px;
-            color: #191B1D;
+            color: #191b1d;
             font-size: 2.2rem;
             font-weight: 700;
             line-height: 1.75;
@@ -295,7 +301,7 @@
 
             .rating {
                 margin-left: 4px;
-                color: #191B1D;
+                color: #191b1d;
                 font-size: 1.6rem;
                 font-weight: 600;
                 line-height: 1.75;
@@ -326,42 +332,42 @@
             .icon {
                 opacity: 0;
             }
-    
+
             .location-name {
-                color: #FF5B26;
+                color: #ff5b26;
                 font-size: 1.4rem;
                 font-weight: 600;
                 line-height: 1.71;
             }
         }
     }
-    .content{
+    .content {
         .category {
             margin-top: 16px;
-            color: #4E5358;
+            color: #4e5358;
             font-size: 1.6rem;
             font-weight: 400;
-            line-height: 1.75;  
+            line-height: 1.75;
         }
-        .title{
+        .title {
             margin-top: 4px;
-            color: #191B1D;
+            color: #191b1d;
             font-size: 2.2rem;
             font-weight: 700;
-            line-height: 1.27; 
+            line-height: 1.27;
         }
-        .desc{
+        .desc {
             position: absolute;
             margin-left: 125px;
             margin-top: 16px;
         }
-        .rate{
+        .rate {
             display: flex;
             align-items: center;
             margin-top: 10px;
             padding: 4px 12px;
             border-radius: 16px;
-            background: #FFF7DA;
+            background: #fff7da;
             width: 117px;
 
             .star {
@@ -370,7 +376,7 @@
 
             .rating {
                 margin-left: 4px;
-                color: #191B1D;
+                color: #191b1d;
                 font-size: 1.4rem;
                 font-weight: 600;
                 line-height: 1.71;
@@ -379,39 +385,39 @@
     }
 }
 
-.searchresult:hover{
+.searchresult:hover {
     transform: translateY(-10px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
 }
 
 .highlight:before,
-.highlight:after{
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: -100%;
-  left: 0;
-  background: #f09070;
-  z-index: -1;
-  transition: all .35s;
+.highlight:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+    background: #f09070;
+    z-index: -1;
+    transition: all 0.35s;
 }
 
-.highlight:before{
-  opacity: .5;
+.highlight:before {
+    opacity: 0.5;
 }
 
-.highlight:after{
-  transition-delay: .2s;
+.highlight:after {
+    transition-delay: 0.2s;
 }
 
-.highlight:hover{
-  color: #fff;
-  border-radius: 12px;
+.highlight:hover {
+    color: #fff;
+    border-radius: 12px;
 }
 
 .highlight:hover:before,
-.highlight:hover:after{
-  top: 0;
+.highlight:hover:after {
+    top: 0;
 }

@@ -1,15 +1,26 @@
+@use "./src/styles/abstracts" as abstracts;
+
 .share {
     margin-top: 150px;
     background-color: #fff9e5;
+    @include abstracts.screen(sm) {
+        margin-top: 100px;
+    }
 }
 .inner {
     padding: 100px 0;
     display: flex;
     column-gap: 130px;
+    @include abstracts.screen(sm) {
+        padding: 50px 0;
+    }
 }
 .media {
     position: relative;
     width: 470px;
+    @include abstracts.screen(sm) {
+        display: none;
+    }
     .image {
         width: 100%;
         object-fit: cover;
@@ -63,6 +74,7 @@
         font-size: 1.8rem;
         font-weight: 400;
         line-height: 1.66;
+      
     }
     .btn {
         margin-top: 40px;
