@@ -1,13 +1,15 @@
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "~/App";
+
 import styles from "./UserNavigation.module.scss";
 import Button from "../Button";
 import { removeFromSession } from "~/common/session";
 const cx = classNames.bind(styles);
 
 function UserNavigation() {
+    let navigate = useNavigate();
     const {
         userAuth: { username },
         setUserAuth,
@@ -16,6 +18,8 @@ function UserNavigation() {
         removeFromSession("user");
         setUserAuth({ accessToken: null }); // logOutUser();
         // console.log("User signed out");
+
+        navigate("/");
     };
     return (
         <div className={cx("user-navigation")}>

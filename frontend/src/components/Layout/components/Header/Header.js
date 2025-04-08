@@ -164,7 +164,7 @@ function Header() {
                         </div>
                     ) : (
                         <div className={cx("action")}>
-                            <Button text className={cx("signup-btn")}>
+                            <Button text className={cx("signin-btn")}>
                                 <Link to="/signin">Sign In</Link>
                             </Button>
 

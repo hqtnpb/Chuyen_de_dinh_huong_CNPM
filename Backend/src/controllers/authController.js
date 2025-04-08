@@ -1,12 +1,16 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const bcrypt = require("bcrypt");
 const { nanoid } = require("nanoid");
 const User = require("../models/User");
 const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
 const admin = require("firebase-admin");
-const serviceAccountKey = require("../../blog-website-e0d5a-firebase-adminsdk-fbsvc-d2d431c9f0.json");
 const { getAuth } = require("firebase-admin/auth");
-dotenv.config();
+const serviceAccountKey = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+serviceAccountKey.private_key = serviceAccountKey.private_key.replace(
+    /\\n/g,
+    "\n"
+);
 
 let emailRegex =
     /^(?!.*\.\.)(?!.*\.$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
